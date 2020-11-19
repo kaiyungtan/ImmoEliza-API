@@ -8,8 +8,8 @@ Group 1 : Valentin, Henrique, Nathanaël, Adam
 
 	- frontend: 2 
 	- backend: 1
- - 1 AI Dev (Adam)
-    
+	- 1 AI Dev (Adam)
+ 
     
 ## Mission objectives (if this is a Consolidation Challenge)
 
