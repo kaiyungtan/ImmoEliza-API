@@ -72,7 +72,7 @@ def predict_apartment():
 
     output = round(prediction[0])
 
-    final_features['prediction'] = output
+    final_features['Predicted Price'] = output
 
     result = final_features.to_json(index=False,orient="split")
     parsed = json.loads(result)
