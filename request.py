@@ -13,7 +13,7 @@ r = requests.post(url,json={'city_name': 'Averbode',
 							'swimming_pool': 0,
 							'state_of_the_building': 'to renovate',
 							'construction_year' : 1930,
-							'province': '	',
+							'province': 'Brabant flamand',
 							'region': 'Flandre'})
 
 print(r.json())
