@@ -33,9 +33,10 @@ You need to create an API that will make price forecasts on houses according to 
 - You provide a representation of the 3d coordinates of the house
 
 ### Steps
-1. Create the repository
-2. Study the request (What & Why ?)
-3. Identify technical challenges (How ?)
-4. Create and save your model
-5. Create your API
-6. Integrate your model into your API 
+1. Create the repository - Adam   
+2. Create Trello to track progress - Valentin
+3. Study the request (What & Why ?)
+4. Identify technical challenges (How ?)
+5. Create and save your model
+6. Create your API
+7. Integrate your model into your API 
