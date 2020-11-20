@@ -37,6 +37,13 @@ You need to create an API that will make price forecasts on houses according to 
 2. Create Trello to track progress - Valentin
 3. Study the request (What & Why ?)
 4. Identify technical challenges (How ?)
-5. Create and save your model
+5. Create and save your model - Adam
 6. Create your API
 7. Integrate your model into your API 
+
+
+### Technical challenges
+
+-
+
+
