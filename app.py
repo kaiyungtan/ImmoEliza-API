@@ -50,8 +50,8 @@ def predict_house():
     parsed = json.loads(result)
     
     return json.dumps(parsed, indent=4) 
-    #render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
-
+    
+    #return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
  
 @app.route('/predict_apartment',methods=['GET','POST'])
 def predict_apartment():
@@ -80,7 +80,7 @@ def predict_apartment():
     return json.dumps(parsed, indent=4)
     
 
-    #return final_features.json(),render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
+    #return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
 
  
 

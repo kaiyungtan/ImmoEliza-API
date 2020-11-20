@@ -1,6 +1,8 @@
 # ImmoEliza-API
- To create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc.)
 
+To create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc.)
+
+Deployment through Heroku - https://immoeliza-real-estate.herokuapp.com/
 
 ## Team Members
 
@@ -38,7 +40,7 @@ You need to create an API that will make price forecasts on houses according to 
 3. Study the request (What & Why ?)
 4. Identify technical challenges (How ?)
 5. Create and save your model - Adam
-6. Create your API
+6. Create your API 
 7. Integrate your model into your API 
 
 
