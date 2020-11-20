@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template, url_for, flash, redirect
 import joblib
+import json
 
 app = Flask(__name__)
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
@@ -42,8 +43,14 @@ def predict_house():
     prediction = model_house.predict(final_features)
 
     output = round(prediction[0])
+    
+    final_features['Predicted Price'] = output
 
-    return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
+    result = final_features.to_json(index=False,orient="split")
+    parsed = json.loads(result)
+    
+    return json.dumps(parsed, indent=4) 
+    #render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
 
  
 @app.route('/predict_apartment',methods=['GET','POST'])
@@ -65,7 +72,16 @@ def predict_apartment():
 
     output = round(prediction[0])
 
-    return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
+    final_features['prediction'] = output
+
+    result = final_features.to_json(index=False,orient="split")
+    parsed = json.loads(result)
+    
+    return json.dumps(parsed, indent=4)
+    
+
+    #return final_features.json(),render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
+
  
 
 if __name__ == "__main__":
