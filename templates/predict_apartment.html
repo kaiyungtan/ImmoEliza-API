@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ImmoEliza API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="main">
+	<h1>Predict Apartment Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_apartment')}}"method="post">
+    	<input type="text" name="city_name" placeholder="city_name" required="required" />
+        <input type="int" name="number_of_rooms" placeholder="Test number_of_rooms" required="required" />
+		    <input type="int" name="house_area" placeholder="house_area" required="required" />
+        <input type="boolean" name="fully_equipped_kitchen" placeholder="fully_equipped_kitchen" required="required" />
+        <input type="boolean" name="open_fire" placeholder="open_fire" required="required" />
+        <input type="boolean" name="terrace" placeholder="terrace" required="required" />
+        <input type="boolean" name="garden" placeholder="garden" required="required" />
+        <input type="int" name="number_of_facades" placeholder="number_of_facades" required="required" />
+        <input type="boolean" name="swimming_pool" placeholder="swimming_pool" required="required" />
+        <input type="text" name="state_of_the_building" placeholder="state_of_the_building" required="required" />
+        <input type="int" name="construction_year" placeholder="construction_year" required="required" />
+        <input type="text" name="province" placeholder="province" required="required" />
+        <input type="text" name="region" placeholder="region" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
