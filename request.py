@@ -18,6 +18,22 @@ r = requests.post(url,json={'city_name': 'Averbode',
 
 print(r.json())
 
+url = 'http://localhost:5000/predict_house_postal_code'
+r = requests.post(url,json={'postal_code': '3271',
+							'number_of_rooms': 4,
+							'house_area' : 226,
+							'fully_equipped_kitchen': 'yes',
+							'open_fire':'no',
+							'terrace': 'yes',
+							'garden': 'yes',
+							'surface_of_the_land' : 398,
+							'number_of_facades': 3,
+							'swimming_pool': 'no',
+							'state_of_the_building': 'to renovate',
+							'construction_year' : 1930})
+
+print(r.json())
+
 url = 'http://localhost:5000/predict_apartment'
 r = requests.post(url,json={'city_name': 'Anderlecht',
 							'number_of_rooms': 2,

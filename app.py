@@ -7,6 +7,7 @@ import json
 app = Flask(__name__)
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
 model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
+model_house_postal_code = joblib.load('ridge_model_house_21.11.2020.pkl')
 
 @app.route("/")
 @app.route("/home")
@@ -16,6 +17,10 @@ def home():
 @app.route("/house")
 def house():
     return render_template("predict_house.html")
+
+@app.route("/house_postal_code")
+def house_postal_code():
+    return render_template("predict_house_postal_code.html")
 
 @app.route("/apartment", methods = ['GET'])
 def apartment():
@@ -82,7 +87,32 @@ def predict_apartment():
 
     #return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
 
- 
+@app.route('/predict_house_postal_code',methods=['GET','POST'])
+def predict_house_postal_code():
+    '''
+    For rendering results on HTML GUI
+    '''
+    columns = ['postal_code', 'number_of_rooms', 'house_area', 'fully_equipped_kitchen',
+    'open_fire', 'terrace', 'garden', 'surface_of_the_land','number_of_facades', 
+    'swimming_pool', 'state_of_the_building','construction_year']
+
+    int_features = [x for x in request.form.values()]
+    int_features = np.array(int_features) 
+    int_features = int_features.reshape(-1,12)
+    final_features = pd.DataFrame(int_features,columns=columns)
+
+    prediction = model_house_postal_code.predict(final_features)
+
+    output = round(prediction[0])
+    
+    #final_features['Predicted Price'] = output
+
+    #result = final_features.to_json(index=False,orient="split")
+    #parsed = json.loads(result)
+    
+    #return json.dumps(parsed, indent=4) 
+    
+    return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
