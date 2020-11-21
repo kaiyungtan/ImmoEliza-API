@@ -105,8 +105,12 @@ def predict_house_postal_code():
     prediction = model_house_postal_code.predict(final_features)
 
     output = round(prediction[0])
+
+    pricem2 = round(output/int(final_features['house_area'][0]))
     
-    return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
+    return render_template('result.html', 
+                            prediction_text1='Predicted house price is € {}'.format(output),
+                            prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
 
 @app.route('/predict_apartment_postal_code',methods=['GET','POST'])
 def predict_apartment_postal_code():
@@ -127,7 +131,11 @@ def predict_apartment_postal_code():
 
     output = round(prediction[0])
 
-    return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
+    pricem2 = round(output/int(final_features['house_area'][0]))
+
+    return render_template('result.html', 
+                            prediction_text1='Predicted apartment price is € {}'.format(output),
+                            prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
 
 if __name__ == "__main__":
     app.run(debug=True)

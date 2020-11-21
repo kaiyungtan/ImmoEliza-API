@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
 	<body>
-
+	
 	 <div class="main">
 
-	    <h1> {{ prediction_text }}</h1>
+	    <h3> {{ prediction_text1 }}</h3>
+	    <h5> {{ prediction_text2 }}</h5>
 
-		<div class="navbar-nav">
-		    <a class="nav-item nav-link" href="{{ url_for('house') }}">Back to Predict House Price with City Name</a>
-			<a class="nav-item nav-link" href="{{ url_for('apartment') }}">Back to Predict Apartment Price with City Name</a>
-			<a class="nav-item nav-link" href="{{ url_for('house_postal_code') }}">Back to Predict House Price with Postal Code</a>
-			<a class="nav-item nav-link" href="{{ url_for('apartment_postal_code') }}">Back to Predict Apartment Price with Postal Code</a>
-		 </div>
+	    <img src="https://user-images.githubusercontent.com/69633814/99885451-5112af80-2c35-11eb-92a1-847291f48fb5.png" alt="House" width="700px">
+
+		
 	 </div>
 	</body>
+
+ 
+
 {% endblock content %}
