@@ -2,7 +2,7 @@
 {% block content %} 
   <body>
    <div class="main">
-  	<h1>Predict House Price</h1>
+  	<h1>Predict House Price City Name</h1>
 
        <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict_house')}}"method="post">
@@ -24,6 +24,361 @@
       </form>
    </div>
   </body>
+
+<details>
+  <summary>Features</summary>
+<ol>
+<li>city_name (str): name of the city</li>
+<br>
+<li>number_of_rooms (int): The number of rooms of the property</li>
+<br>
+<li>house_area (int): The area (m2) of the house (floors)</li>
+<br>
+<li>surface_of_the_land (int): The area (m2) of the land</li>
+<br>
+<li>fully_equipped_kitchen (str): If the house has a fully equipped kitchen or not</li>
+<br>
+<li>open_fire (str): If there's an open fire or not</li>
+<br>
+<li>terrace (str): If there's a terrace or not</li>
+<br>
+<li>garden (str): If there's a garden or not</li>
+<br>
+<li>number_of_facadess (int): The number of facades (0 to 4)</li>
+<br>
+<li>swimming_pool (str): If there's a swimming pool or not</li>
+<br>
+<li>state_of_the_building (str): new/good/just renovated/to renovated/unknown</li>
+<br>
+<li>construction_year (int): The property built's year</li>
+<br>
+<li>province (str): name of the province</li>
+<br>
+<li>region (str): name of the region</li>
+<br>
+</ol>
+</details>
+
+<details>
+  <summary>City Name</summary>
+
+<ul>
+'Ixelles', 'Nieuwenrode', 'Spa', 'Mont-Sur-Marchienne', 'Beersel','Bonlez', 'Embourg', 'Genval', 'Assebroek', 'Lissewege','Sint-Andries', 'Ophain-Bois-Seigneur-Isaac', 'Tintigny', 'Brugge',
+'Beaufays', 'Rixensart', 'Enghien', 'Liège', 'Tervuren',
+'Sint-Martens-Bodegem', 'Glain', 'Flône', 'Mellier', 'Uccle',
+'Appelterre-Eichem', 'Awirs', 'Richelle', 'Schaerbeek',
+'Berchem-Sainte-Agathe', 'Wasmuel', 'Wezembeek-Oppem',
+'Han-Sur-Lesse', 'Nossegem', 'Hoeilaart', 'Wulpen', 'Nandrin',
+'Anloy', 'Asse', 'Hermée', 'Forest', 'Baelen', 'Mespelare',
+'Dongelberg', 'Woluwe-Saint-Pierre', 'Woluwe-Saint-Lambert',
+'Nessonvaux', 'Angleur', 'Marbaix', 'Saint-Géry', 'Outrelouxhe',
+'Suxy', 'Lincent', 'Maillen', 'Latinne', 'Namur', 'Romsée',
+'Arville', 'Sterrebeek', "Bois-D'haine", 'Zulte', 'Ernonheid',
+'Nieuwerkerken', 'Lamontzée', 'Klemskerke', 'Grobbendonk',
+'Lillois-Witterzée', 'Lessines', 'Seneffe',
+'Saint-Georges-Sur-Meuse', 'Huccorgne', 'Tubize', 'Tournai',
+'Daussoulx', 'Balâtre', 'Laeken', 'Bonnert', 'Knokke', 'Wemmel',
+'Jemeppe-Sur-Meuse', 'Hautrage', 'Saint-Mard', 'Lanquesaint',
+'Court-Saint-Etienne', "Braine-L'alleud", 'Breendonk', 
+'Antwerpen','Nivelles', "L'ecluse", 'Humain', 'Falaen', 'Milmort', 'Kraainem',
+'Ramskapelle', 'Olne', 'Vaux-Sous-Chèvremont', 'Oelegem', 
+'Bihain','Molenbaix', 'Esneux', 'Bailièvre', 'Comblain-Fairon', 'Elewijt',
+'Renaix', 'Leugnies', 'Goutroux', 'Oostende', 'Jette', 'Kortrijk',
+'Beveren', 'Houtvenne', 'Ferrières', 'Rosières',
+'Rhode-Saint-Genèse', 'Abolens', 'Lahamaide', 'Lontzen',
+'Bavikhove', 'Uitkerke', 'Orp-Le-Grand', 'Woubrechtegem',
+'Grez-Doiceau', 'Auderghem', 'Couture-Saint-Germain', 'Chercq',
+'Stavelot', 'Sleidinge', 'Gent', 'De Panne', 'Maldegem', 'Housse',
+'Blaasveld', 'Flobecq', 'Dison', 'Franière', 'Bizet', 'Ellemelle',
+'Grotenberge', 'Oostrozebeke', 'Peutie', 'Bost', 'Ingelmunster',
+'Neuville-En-Condroz', 'Anthisnes', 'Heppignies', 'Waasmont',
+'Micheroux', 'Boëlhe', 'Ittre', 'Erquelinnes', 'Andrimont',
+'Louveigné', 'Gentbrugge', 'Maffle', 'Lapscheure', 'Drongen',
+'Limont', 'Brussegem', 'Melles', 'Koolskamp', 'Geraardsbergen',
+'Buzet', 'Boncelles', 'Tremelo', 'Zaffelare', 'Musson',
+'Wasmes-Audemez-Briffoeil', 'Saint-Gilles', 'Herseaux','Ben-Ahin',
+'Herent', 'Heverlee', 'Leuze-En-Hainaut', 'Overijse', 'Aartrijke',
+'Grandhan', 'Mechelen', 'Knesselare', 'Berchem', 'Neupré',
+'Plainevaux', 'Bléharies', 'Ans', 'Falmagne', 'Melsen', 'Berzée',
+'Villers-Lez-Heest', 'Wavre', 'Maffe', 'Teralfene', 'Battice',
+'Jumet', 'Tongrinne', 'Bouffioulx', 'Averbode', 'Neerijse',
+'Edegem', 'Les Bons Villers', 'Alleur', 'Heyd', 'Retie', 'Horrues',
+'Hertsberge', 'Lisogne', 'Hombeek', 'Bruxelles', 'Begijnendijk',
+'Alken', 'Ernage', 'Linkebeek', 'Anderlecht', 'Quiévrain',
+'Vyle-Et-Tharoul', 'Cuesmes', 'Huizingen', 'Herchies',
+'Wauthier-Braine', 'Lier', 'Heusden', 'Deerlijk',
+'Nieuwkerken-Waas', 'Eke', 'Moerzeke', 'Bothey', 'Sinaai-Waas',
+'Gesves', 'Eine', "Ecaussinnes-D'enghien", 'Ambly', 'Lambermont',
+'Welkenraedt', 'Etterbeek', 'Falisolle', 'Bovesse', 'Kinrooi',
+'Biévène', 'Bouge', 'Deurne', 'Braine-Le-Comte', 'Villers-Poterie',
+'Montignies-Sur-Sambre', 'Schoten', 'Bonneville',
+'Strombeek-Bever', 'Piéton', 'Bernissart', 'Mons', 'Izel',
+'Corswarem', 'Bras', 'Werken', 'Corbion', 'Waimes',
+'Sart-Dames-Avelines', 'Luingne', 'Aalst', 'Lauw', 'Herk-De-Stad',
+'Zwevegem', 'Sint-Eloois-Vijve', 'Waarloos', 'Mortsel',
+'Korbeek-Lo', 'Gingelom', 'Zele', 'Bocholt', 'Baudour',
+'Wanfercée-Baulet', 'Oordegem', 'Lubbeek', 'Jemappes', 'Bevercé',
+'Florenville', 'Ottignies', 'Helen-Bos', 'Cugnon', 'Baal',
+'Hoegaarden', 'Leuven', 'Nieuwrode', 'Essen', 'Scherpenheuvel',
+'Rupelmonde', 'Balen', 'Bulskamp', 'Werm', 'Faimes', 'Chênee',
+'Mettekoven', 'Borsbeek', 'Kessel Lo', 'Zepperen', 'Ham',
+'Ellikom', 'Ingooigem', 'Sint-Joris', 'Aubange', 'Meix-Le-Tige',
+'Ardooie', 'Niel', 'Zonhoven', 'Middelkerke', 'Blaimont',
+'Leignon', 'Diepenbeek', 'Binkom', 'Attert', 'Orbais', 'Boutersem',
+'Membruggen', 'Gelrode', 'Eksaarde', 'Koersel', 'Duffel', 'Mol',
+'Malle', 'Beloeil', 'Tessenderlo', 'Wetteren', 'Perk', 'Merksem',
+'Liedekerke', 'Torhout', 'Rillaar', 'Zoerle-Parwijs', 
+'Brasschaat','Belgrade', 'Couvin', 'Ambresin', 'Profondeville', 'Maaseik',
+'Drogenbos', 'Booischot', 'Ternat', 'Kasterlee', 'Leopoldsburg',
+'Sint-Joris-Weert', 'Mechelen-Aan-De-Maas', 'Poperinge', 'Assent',
+'Burcht', 'Molenbeek-Saint-Jean', 'Hasselt', 'Ekeren', 
+'Herentals','Souvret', 'Ougrée', 'Saint-Denis', 'Villers-La-Bonne-Eau',
+'Sibret', 'Berlaar', 'Overpelt', 'Beselare', 'Beerzel', 'Ligne',
+'Kessel', 'Poppel', 'Leefdaal', 'Montegnée', 'Anderlues', 'Marke',
+'Izegem', 'Houthulst', 'Wingene', 'Halen', 'Halle', 'Néchin',
+'Dworp', 'Lembeek', 'Boechout', 'Varendonk', 'Pulderbos', 
+'Lommel','Wommelgem', 'Brecht', 'Denderleeuw', 'Wilrijk', 'Aalbeke',
+'Pellenberg', 'Geel', 'Vorselaar', 'Turnhout', 'Lodelinsart',
+'Gellik', 'Haasdonk', 'Ottergem', 'Sint-Kwintens-Lennik',
+'Schelle', 'Hamois', 'Heure', 'Wiers', 'Opbrakel', 'Warquignies',
+'Menen', 'Kapellen', 'Bièvre', 'Herstal', 'Zelzate', 'Schriek',
+'Havay', 'Dessel', 'Afsnee', 'Bunsbeek', 'Veldegem', 'Doel',
+'Saint-Servais', 'Kester', 'Kanegem', 'Itterbeek', 'Rummen',
+'Pittem', 'Bredene', 'Heppen', 'Grote-Spouwen', 'Schore',
+'Nederokkerzeel', 'Courcelles', 'Bree', 'Stokkem', 'Steendorp',
+'Eernegem', 'Hastière', 'Moorsele', 'Arendonk', 'Malderen',
+'Houthalen-Helchteren', 'Vorst', 'Oeselgem', 'Rijkevorsel',
+'Opdorp', 'Waanrode', 'Leffinge', "'s Gravenwezel", 'Grandvoir',
+'Wezemaal', 'Ramsel', 'Hoevenen', 'Paal', 'Wachtebeke', 'Belsele',
+'Langdorp', 'Bornem', 'Waasmunster', 'Oudenaken', 'Heule',
+'Wilsele', 'Wijchmaal', 'Erps-Kwerps', 'Borgerhout',
+'Sint-Amandsberg', 'Heist-Op-Den-Berg', 'Rotselaar', 'Linter',
+'Tielt', 'Grazen', 'Grimbergen', 'Tildonk', 'Meerbeek','La Hulpe',
+'Aische-En-Refail', 'Grand-Axhe', 'Ruisbroek', 'Ganshoren',
+'Polleur', 'Stekene', 'Beverlo', 'Waterloo', 'Bouillon',
+'Saint-Josse-Ten-Noode', 'Herenthout', 'Eppegem', 'Geluwe',
+'Fléron', 'Messancy', 'Lebbeke', 'Fumal', 'Kalmthout', 'Meer',
+'Minderhout', 'Alsemberg', 'Hechtel-Eksel', 'Couillet', 
+'Malempré','Kuringen', 'Fouron-Saint-Martin', 'Montigny-Le-Tilleul', 'Reet',
+'Vlimmeren', 'Nieuwpoort', 'Frameries', 'Neder-Over-Heembeek',
+'Genk', 'Vosselaar', 'Bousval', 'Charleroi', 'Watermael-Boitsfort',
+'Koekelare', 'Marcinelle', 'Gontrode', 'Chevron', 'Sprimont',
+'Sint-Martens-Lierde', 'Haren', 'Meise', 'Carnières',
+'Louvain-La-Neuve', 'Bonheiden', 'Koekelberg', 'Aisemont',
+'Waregem', 'Fraiture', 'Aalter', 'Pamel', 'Meerbeke',
+'Massenhoven', 'Kruishoutem', 'Stembert', 'Naninne',
+'Henri-Chapelle', 'Epinois', 'Jalhay', 'Opglabbeek', 'Meyerode',
+'Autre-Eglise', 'Espierres', 'Aartselaar', 'Meulebeke',
+'Gemmenich', 'Beringen', 'Thines', 'Berlare', 'Sint-Pieters-Rode',
+'Noordschote', 'Poulseur', 'Wondelgem', 'Oud-Turnhout', 
+'Bourlers','Clavier', 'Graty', 'Maisières', 'Lippelo', 'Loncin',
+'Sint-Katelijne-Waver', 'Lovendegem', 'Hulsonniaux',
+'Saint-Symphorien', 'Les Bulles', 'Péruwelz', 'Hemiksem',
+'Jamagne', 'Dottignies', 'Houdeng-Aimeries', 'Moerbeke-Waas',
+'Celles', 'Barvaux-Condroz', 'Keerbergen', 'Feschaux', 'Deftinge',
+'Oostvleteren', 'Oudenburg', 'Retinne', 'Gosselies',
+'Onze-Lieve-Vrouw-Waver', 'Weelde', 'Avelgem', 'Lives-Sur-Meuse',
+'Landegem', 'Meerhout', 'Waarschoot', 'Gistel', 'Staden', 
+'Laarne','Boom', 'Bachte-Maria-Leerne', 'Villers-Sur-Semois', 'Heestert',
+'Wolvertem', 'De Pinte', 'Baardegem', 'Boirs', 'Baulers',
+'Herfelingen', 'Ruiselede', 'Neufvilles', 'Pepinster',
+'Rachecourt', 'Gierle', 'Saint-Marc', 'Sint-Pieters-Kapelle',
+'Harelbeke', 'Achel', 'Sint-Stevens-Woluwe', 'Heffen',
+'Sint-Maria-Horebeke', 'Angre', 'Mariakerke', 'Jabbeke', 
+'Ghlin','Aiseau', 'Lombardsijde', 'Beerst', 'Deux-Acren', 'Dikkelvenne',
+'Waarbeke', 'Zwijnaarde', 'Bierghes', 'Kortenberg', 'Fooz',
+'Dorinne', 'Buvrinnes', 'Hove', 'Juprelle', 'Morlanwelz', 'Meerle',
+'Amonines', 'Oostakker', 'Gilly', 'Dadizele', 'Werchter',
+'Houtain-Saint-Siméon', 'Kuurne', 'Bertem', 'Ezemaal', 'Herve',
+'Mazenzele', 'Butgenbach', 'Kerksken', 'Boortmeerbeek',
+'Sint-Huibrechts-Lille', 'Broekom', 'Casteau', 'Groot-Bijgaarden',
+'Galmaarden', 'Patignies', 'Hooglede', 'Hérinnes-Lez-Pecq',
+'Baarle-Hertog', 'Fouron-Le-Comte', 'Hoogstraten',
+'Roesbrugge-Haringe', 'Loenhout', 'Beho', 'Eeklo', 'Haaltert',
+'Bierges', 'Denée', 'Tiegem', 'Bullange', 'Saint-Vith',
+'Destelbergen', 'Gouvy', 'Nukerke', 'Vlamertinge', 'Assenede',
+'Athus', 'Céroux-Mousty', 'Anseroeul', 'Houffalize',
+'Haine-Saint-Paul', 'Vlierzele', 'Comblain-Au-Pont', 'Berlingen',
+'Leernes', 'Haasrode', 'Zutendaal', 'Paliseul',
+'Sint-Eloois-Winkel', 'Monceau-Sur-Sambre', 'Meetkerke',
+'Thimister', 'Comines', 'Eupen', 'Nil-Saint-Vincent-Saint-Martin',
+'Meilegem', 'Graux', 'Wijnegem', 'Lummen', 'Gembes', 'Heusy',
+'Gijzegem', 'Ramegnies', 'Desselgem', 'Froyennes', 'Oosterzele',
+'Elsegem', 'Herbeumont', 'Bauffe', 'Glabais', 'Fernelmont',
+'Ramegnies-Chin', 'Zingem', 'Ethe', 'Cérexhe-Heuseux',
+'Pommeroeul', 'Grivegnee', 'Kaprijke', 'Aubel', 'Rongy', 'Binche',
+'Alveringem', 'Aspelare', 'Haccourt', 'Westouter', 'Sint-Jan',
+'Boorsem', 'Wellin', 'Hofstade', 'Watervliet', 'De Klinge',
+'Hensies', 'Habay-La-Neuve', 'Bovigny', 'Mont-Sainte-Geneviève',
+'Ravels', 'Stavele', 'Bikschote', 'Schepdaal', 'Beigem', 'Héron',
+'Humbeek', 'Ways', "Meslin-L'evêque", 'Olen', 'Bassevelde',
+'Fosse', 'Burg-Reuland', 'Wiekevorst', 'Limelette', 
+'Beyne-Heusay','Hombourg', 'Lendelede', 'Sint-Baafs-Vijve', 'Landelies', 'Evere',
+'Gottignies', 'Meensel-Kiezegem', 'Lint', 'Wichelen', 'Kermt',
+'Bois-De-Lessines', 'Heikruis', 'Lichtervelde', 'Hertain',
+'Gaurain-Ramecroix', 'Testelt', 'Hoboken', 'Hornu', 'Hampteau',
+'Bagimont', 'La Roche-En-Ardenne', 'Sivry', 'Clermont-Sous-Huy',
+'Trazegnies', 'Forchies-La-Marche', 'La Calamine', 'Erpion',
+'Torgny', 'Boussu', 'Blaton', 'Rosée', 'Liberchies', 'Dour',
+'Saint-Ghislain', 'Zellik', "Fontaine-L'evêque", 'Arquennes',
+'Mont-Saint-Guibert', 'Roux', 'Gozée', 'Thuin', 'Havre', 'Tertre',
+'Limbourg', 'Virelles', 'Harsin', 'Bierset', 'Vaux-Et-Borset',
+'Kettenis', 'Adegem', 'Plombières', 'Emptinne', 'Gouy-Lez-Piéton',
+'Ransart', 'Farciennes', 'Wijgmaal', 'Fexhe-Le-Haut-Clocher',
+'Pulle', 'Machelen', 'Bergilers', 'Vlezenbeek', 'Chaudfontaine',
+'Blégny', 'Fize-Le-Marsal', 'Brugelette', 'Sint-Denijs', 
+'Hodeige','Lot', 'Audregnies', 'Hyon', 'Diegem', 'Buissenal', 'Kortessem',
+'Tongre-Saint-Martin', 'Hergenrath', 'Asquillies', 'Sint-Laureins',
+'Chastrès', 'Attenhoven', 'Hélécine', 'Pousset', 'Chapon-Seraing',
+'Bombaye', 'Vivegnis', 'Buizingen', 'As', 'Aubechies', 'Muizen',
+'Welle', 'Bolland', 'Hermalle-Sous-Argenteau', 'Barry', 'Wihogne',
+'Zomergem', 'Sirault', 'Velm', 'Bouwel', 'Binderveld', 'Otegem',
+'Outer', 'Maarkedal', 'Melen', 'Borsbeke', 'Vliermaalroot',
+'Vaulx', 'Stevoort', 'Fexhe-Slins', 'Incourt', 'Mellet', 
+'Blanden','Tillet', 'Fourbechies', 'Rekem', 'Cheratte', 'Marcourt', 
+'Onhaye','Taintignies', 'Le Mesnil', 'Dampremy', 'Daussois', 'Hanzinelle',
+'Monceau-Imbrechies', 'Croix-Lez-Rouveroy', 'Merbes-Le-Château',
+'Hastière-Par-Delà', 'Villers-La-Loue', 'Tourinne', 'Bertogne',
+'Waudrez', 'Bande', 'Wanlin', 'Wijtschate', 'Irchonwelz',
+'Martelange', 'Moen', 'Villers-Devant-Orval', 'Vezon', 'Pipaix',
+'Brye', 'Tavier', 'Agimont', 'Mont', 'Anvaing', 'Wibrin',
+'Haillot', 'Tenneville', 'Jallet', 'Tintange', 'Habay-La-Vieille',
+'Gelbressée', 'Habergy', 'Boekhoute', 'Latour', 'Ortho',
+'Sensenruth', 'Crupet', 'Froidmont', 'Champlon', 'Liers', 'Olmen',
+'Merksplas', 'Kortenaken', 'Noirfontaine', 'Molenstede', 'Ohey',
+'Vliermaal', 'Desteldonk', 'Sommière', 'Chanly', 'Houtain-Le-Val',
+'Omal', 'Oostwinkel', 'Herstappe', 'Argenteau', 'Martenslinde',
+'Borlo', 'Courrière', 'Ronsele', 'Cognelée', 'Eksel',
+'Sint-Margriete', 'Thieulain', 'Biercée', 'Chassepierre', 'Arbre',
+'Sint-Katherina-Lombeek', 'Pollare', 'Kaggevinne', 'Calonne',
+'Neu-Moresnet', 'Bellem', 'Flamierge', 'Attenrode', 'Thimougies',
+'Wortel', 'Wambeek', 'Saint-Remy', 'Hognoul', 'Oud-Heverlee',
+'Haut-Ittre', 'Borchtlombeek'
+
+</ul> 
+</details>
+
+<details>
+  <summary>Province & Region Name</summary>
+
+<ul>
+<h5/>Province:</h5>
+<br>
+<li>Bruxelles-Capitale</li>
+<br>
+<li>Brabant flamand</li>
+<br>
+<li>Liège</li>
+<br>
+<li>Hainaut</li>
+<br>
+<li>Brabant wallon</li>
+<br>
+<li>Flandre-Occidentale</li>
+<br>
+<li>Luxembourg</li>
+<br>
+<li>Flandre-Orientale</li>
+<br>
+<li>Namur</li>
+<br>
+<li>Anvers</li>
+<br>
+<li>Limbourg</li>
+<br>
+
+<h5/>Region:</h5>
+<br>
+<li>Bruxelles</li>
+<br>
+<li>Flandre</li>
+<br>
+<li>Wallonie</li>
+<br>
+
+</details>
+
+<details>
+  <summary>state_of_the_building</summary>
+
+<br>
+<li>to renovate</li>
+<br>
+<li>as new</li>
+<br>
+<li>good</li>
+<br>
+<li>unknown</li>
+<br>
+
+</details>
+
+<details>
+  <summary>Guidelines for inputs</summary>
+<ol>
+ city_name              : string 
+<br>
+ number_of_rooms        : number
+<br>
+ house_area             : number
+<br>
+surface_of_the_land     : 1 = yes/ 0 = no
+<br>
+fully_equipped_kitchen   : 1 = yes/ 0 = no
+<br>
+ open_fire              : 1 = yes/ 0 = no
+<br>
+ terrace                : 1 = yes/ 0 = no
+<br>
+ garden                 : 1 = yes/ 0 = no
+<br>
+ number_of_facades      : number
+<br>
+ swimming_pool          : 1 = yes/ 0 = no
+<br>
+ state_of_the_building  : new/good/just renovated/to renovated/unknown
+<br>
+construction_year       : number
+<br>
+province                : string
+<br>
+region                  : string
+</ol>
+</details>
+
+<details>
+  <summary>Example inputs</summary>
+<ol>
+city_name               : Averbode
+<br>
+ number_of_rooms        : 4
+<br>
+ house_area             : 226
+<br>
+ surface_of_the_land    : 398
+<br>
+ fully_equipped_kitchen : 1 
+<br>
+ open_fire              : 0
+<br>
+ terrace                : 1 
+<br>
+ garden                 : 1 
+<br>
+ number_of_facades      : 3
+<br>
+ swimming_pool          : 0
+<br>
+ state_of_the_building  : to renovate 
+<br>
+ construction_year      : 1930
+<br>
+ province               : Brabant flamand
+<br>
+ region                 : Flandre
+
+</ol>
+</details>
 {% endblock content %}
 
 

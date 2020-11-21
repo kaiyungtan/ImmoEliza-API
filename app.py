@@ -8,6 +8,7 @@ app = Flask(__name__)
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
 model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
 model_house_postal_code = joblib.load('ridge_model_house_21.11.2020.pkl')
+model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl')
 
 @app.route("/")
 @app.route("/home")
@@ -18,18 +19,21 @@ def home():
 def house():
     return render_template("predict_house.html")
 
+@app.route("/apartment", methods = ['GET'])
+def apartment():
+    return render_template("predict_apartment.html")
+
 @app.route("/house_postal_code")
 def house_postal_code():
     return render_template("predict_house_postal_code.html")
 
-@app.route("/apartment", methods = ['GET'])
-def apartment():
-    return render_template("predict_apartment.html")
- 
+@app.route("/apartment_postal_code", methods = ['GET'])
+def apartment_postal_code():
+    return render_template("predict_apartment_postal_code.html")
+
 @app.route("/result")
 def result():
     return render_template("result.html")
-
 
 @app.route('/predict_house',methods=['GET','POST'])
 def predict_house():
@@ -56,8 +60,7 @@ def predict_house():
     
     return json.dumps(parsed, indent=4) 
     
-    #return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
- 
+
 @app.route('/predict_apartment',methods=['GET','POST'])
 def predict_apartment():
     '''
@@ -85,8 +88,6 @@ def predict_apartment():
     return json.dumps(parsed, indent=4)
     
 
-    #return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
-
 @app.route('/predict_house_postal_code',methods=['GET','POST'])
 def predict_house_postal_code():
     '''
@@ -105,14 +106,28 @@ def predict_house_postal_code():
 
     output = round(prediction[0])
     
-    #final_features['Predicted Price'] = output
-
-    #result = final_features.to_json(index=False,orient="split")
-    #parsed = json.loads(result)
-    
-    #return json.dumps(parsed, indent=4) 
-    
     return render_template('result.html', prediction_text='Predicted price for the house is € {}'.format(output))
+
+@app.route('/predict_apartment_postal_code',methods=['GET','POST'])
+def predict_apartment_postal_code():
+    '''
+    For rendering results on HTML GUI
+
+    '''
+    columns = ['postal_code', 'number_of_rooms', 'house_area', 'fully_equipped_kitchen',
+    'open_fire', 'terrace', 'garden', 'number_of_facades','swimming_pool', 
+    'state_of_the_building','construction_year']
+
+    int_features = [x for x in request.form.values()]
+    int_features = np.array(int_features) 
+    int_features = int_features.reshape(-1,11)
+    final_features = pd.DataFrame(int_features,columns=columns)
+
+    prediction = model_apartment_postal_code.predict(final_features)
+
+    output = round(prediction[0])
+
+    return render_template('result.html', prediction_text='Predicted price for the apartment is € {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
