@@ -50,3 +50,18 @@ r = requests.post(url,json={'city_name': 'Anderlecht',
 							'region': 'Bruxelles'})
 
 print(r.json())
+
+url = 'http://localhost:5000/predict_apartment_postal_code'
+r = requests.post(url,json={'city_name': '1070',
+							'number_of_rooms': 2,
+							'house_area' : 130,
+							'fully_equipped_kitchen': 'yes',
+							'open_fire':'no',
+							'terrace': 'yes',
+							'garden': 'no',
+							'number_of_facades': 2,
+							'swimming_pool': 'no',
+							'state_of_the_building': 'as new',
+							'construction_year' : 2017})
+
+print(r.json())
