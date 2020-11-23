@@ -15,11 +15,11 @@ model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl
 def home():
     return render_template("home.html")
 
-@app.route("/house")
+@app.route("/house",methods=['GET','POST'])
 def house():
     return render_template("predict_house.html")
 
-@app.route("/apartment", methods = ['GET'])
+@app.route("/apartment",methods=['GET','POST'])
 def apartment():
     return render_template("predict_apartment.html")
 
