@@ -52,7 +52,7 @@ r = requests.post(url,json={'city_name': 'Anderlecht',
 print(r.json())
 
 url = 'http://localhost:5000/predict_apartment_postal_code'
-r = requests.post(url,json={'city_name': '1070',
+r = requests.post(url,json={'postal_code': '1070',
 							'number_of_rooms': 2,
 							'house_area' : 130,
 							'fully_equipped_kitchen': 'yes',

@@ -95,8 +95,35 @@ def predict_house_tojson2():
 
     output = round(prediction[0])
      
-    return str(list(np.reshape(np.asarray(output), (1, np.size(output)))[0]))[1:-1] 
+    return str(output) 
 
+@app.route("/predict_apartment_tojson2", methods=['GET','POST'])
+def predict_apartment_tojson2():
+
+    house = request.get_json(force=True)
+    postal_code = house['postal_code'] 
+    number_of_rooms = house['number_of_rooms']  
+    house_area = house['house_area']  
+    fully_equipped_kitchen = house['fully_equipped_kitchen'] 
+    open_fire = house['open_fire']  
+    terrace = house['terrace']  
+    garden = house['garden']   
+    number_of_facades = house['number_of_facades']   
+    swimming_pool = house['swimming_pool']  
+    state_of_the_building = house['state_of_the_building']   
+    construction_year = house['construction_year'] 
+
+    columns = [x for x in house.keys()]
+    int_features = [x for x in house.values()]
+    int_features = np.array(int_features) 
+    int_features = int_features.reshape(-1,11)
+    final_features = pd.DataFrame(int_features,columns=columns)
+
+    prediction = model_apartment_postal_code.predict(final_features)
+
+    output = round(prediction[0])
+     
+    return str(output) 
 
 @app.route('/predict_house',methods=['GET','POST'])
 def predict_house():
