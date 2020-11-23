@@ -36,26 +36,20 @@ def result():
     return render_template("result.html")
 
 @app.route("/predict_house_tojson", methods=['GET','POST'])
-def predict_house_tojson(postal_code: str,number_of_rooms:int,
-                         house_area:int,fully_equipped_kitchen: str,
-                         open_fire:str,terrace: str,garden: str,
-                         surface_of_the_land:int,number_of_facades:int,
-                         swimming_pool:str,state_of_the_building:str,
-                         construction_year:int):
+def predict_house_tojson():
 
-    house = {'postal_code': postal_code,
-             'number_of_rooms': number_of_rooms,
-             'house_area' : house_area,
-             'fully_equipped_kitchen': fully_equipped_kitchen,
-             'open_fire': open_fire,
-             'terrace': terrace,
-             'garden': garden,
-             'surface_of_the_land' : surface_of_the_land,
-             'number_of_facades': number_of_facades,
-             'swimming_pool': swimming_pool,
-             'state_of_the_building': state_of_the_building,
-             'construction_year' : construction_year
-            }
+    house = {'postal_code': '3271',
+            'number_of_rooms': 4,
+            'house_area' : 226,
+            'fully_equipped_kitchen': 'yes',
+            'open_fire':'no',
+            'terrace': 'yes',
+            'garden': 'yes',
+            'surface_of_the_land' : 398,
+            'number_of_facades': 3,
+            'swimming_pool': 'no',
+            'state_of_the_building': 'to renovate',
+            'construction_year' : 1930}
 
     columns = [x for x in house.keys()]
     int_features = [x for x in house.values()]
@@ -63,18 +57,16 @@ def predict_house_tojson(postal_code: str,number_of_rooms:int,
     int_features = int_features.reshape(-1,12)
     final_features = pd.DataFrame(int_features,columns=columns)
 
-    prediction = model_house.predict(final_features)
+    prediction = model_house_postal_code.predict(final_features)
 
     output = round(prediction[0])
     
-    #final_features['Predicted Price'] = output
+    final_features['Predicted Price'] = output
 
-    #result = final_features.to_json(index=False,orient="split")
-    #parsed = json.loads(result)
+    result = final_features.to_json(index=False,orient="split")
+    parsed = json.loads(result)
     
-    return output
-
-    #json.dumps(parsed, indent=4) 
+    return  json.dumps(parsed, indent=4) 
 
 
 @app.route('/predict_house',methods=['GET','POST'])
