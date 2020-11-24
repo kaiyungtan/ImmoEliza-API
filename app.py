@@ -230,7 +230,7 @@ def predict_apartment_postal_code():
                             prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
 
 
-@app.route('/map_postal_code',methods=['GET','POST'])
+@app.route('/map_postal_code', methods=['GET','POST'])
 def map_postal_code():
 
     postal_code = 1000
