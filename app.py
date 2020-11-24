@@ -145,12 +145,41 @@ def predict_house():
 
     output = round(prediction[0])
     
-    final_features['Predicted Price'] = output
+    pricem2 = round(output/int(final_features['house_area'][0]))
 
-    result = final_features.to_json(index=False,orient="split")
-    parsed = json.loads(result)
+
+    # to get average house price with city name given
+
+    city_name = final_features['city_name']
+
+
+    df = pd.read_csv('house_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['city_name'][i] == city_name[0] :
+            index.append(i)
+            break
+        continue
     
-    return json.dumps(parsed, indent=4) 
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+    return render_template('result.html', 
+                            prediction_text1='Predicted house price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
+
+
+    #final_features['Predicted Price'] = output
+    #result = final_features.to_json(index=False,orient="split")
+    #parsed = json.loads(result)
+    #return json.dumps(parsed, indent=4) 
     
 
 @app.route('/predict_apartment',methods=['GET','POST'])
@@ -172,12 +201,40 @@ def predict_apartment():
 
     output = round(prediction[0])
 
-    final_features['Predicted Price'] = output
+    pricem2 = round(output/int(final_features['house_area'][0]))
 
-    result = final_features.to_json(index=False,orient="split")
-    parsed = json.loads(result)
+    # to get average house price with city name given
+
+    city_name = final_features['city_name']
+
+
+    df = pd.read_csv('apartment_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['city_name'][i] == city_name[0] :
+            index.append(i)
+            break
+        continue
     
-    return json.dumps(parsed, indent=4)
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+    return render_template('result.html', 
+                            prediction_text1='Predicted apartment price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
+
+
+    #final_features['Predicted Price'] = output
+    #result = final_features.to_json(index=False,orient="split")
+    #parsed = json.loads(result)
+    #return json.dumps(parsed, indent=4)
     
 
 @app.route('/predict_house_postal_code',methods=['GET','POST'])
@@ -362,8 +419,5 @@ def map_average_house_price():
 def map_average_apartment_price():
     return render_template("average_price_per_sqm_belgium_apartment.html")
  
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
