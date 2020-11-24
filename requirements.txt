@@ -1,7 +1,12 @@
+branca==0.4.1
+certifi==2020.11.8
+chardet==3.0.4
 click==7.1.2
 cycler==0.10.0
 Flask==1.1.2
+folium==0.11.0
 gunicorn==20.0.4
+idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
 joblib==0.17.0
@@ -15,10 +20,12 @@ Pillow==8.0.1
 pyparsing==2.4.7
 python-dateutil==2.8.1
 pytz==2020.4
+requests==2.25.0
 scikit-learn==0.23.2
 scipy==1.5.4
 six==1.15.0
 sklearn==0.0
 threadpoolctl==2.1.0
+urllib3==1.26.2
 Werkzeug==1.0.1
 xgboost==1.2.1

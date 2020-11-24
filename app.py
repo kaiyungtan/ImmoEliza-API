@@ -3,6 +3,7 @@ import pandas as pd
 from flask import Flask, request, jsonify, render_template, url_for, flash, redirect
 import joblib
 import json
+import folium
 
 app = Flask(__name__)
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
@@ -30,6 +31,7 @@ def house_postal_code():
 @app.route("/apartment_postal_code", methods = ['GET'])
 def apartment_postal_code():
     return render_template("predict_apartment_postal_code.html")
+
 
 @app.route("/result")
 def result():
@@ -226,6 +228,47 @@ def predict_apartment_postal_code():
     return render_template('result.html', 
                             prediction_text1='Predicted apartment price is € {}'.format(output),
                             prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
+
+
+@app.route('/map_postal_code',methods=['GET','POST'])
+def map_postal_code():
+
+    postal_code = 1000
+    #house = request.get_json(force=True)
+    #postal_code = house['postal_code'] 
+
+    #postal_code = [x for x in house.values()]
+    #postal_code = house.postal_code
+
+    df = pd.read_csv('house_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
+    long,lat = df['longitude'][index][index[0]] ,df['lattitude'][index][index[0]] 
+
+    m = folium.Map(location=[lat,long] ,zoom_start=15)
+
+    folium.Marker(
+            location = [lat,long],
+            tooltip =   '<li><bold>Property : ' 'House'+
+                        '<li><bold>Region : '+str(df.loc[index]['region'].tolist()[0])+
+                        '<li><bold>Province : '+str(df.loc[index]['province'].tolist()[0])+
+                        '<li><bold>City Name : '+str(df.loc[index]['city_name'].tolist()[0])+
+                        '<li><bold>Postal Code : '+str(df.loc[index]['postal_code'].tolist()[0])+
+                        '<li><bold>Average Price_sqm : '+str(round(df.loc[index]['price_sqm'].tolist()[0])),
+            popup = [lat,long]).add_to(m)
+
+
+    return m._repr_html_()
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
