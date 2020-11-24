@@ -199,10 +199,39 @@ def predict_house_postal_code():
     output = round(prediction[0])
 
     pricem2 = round(output/int(final_features['house_area'][0]))
+
+
+    # to get average house price at postal code given
+
+    postal_code = final_features['postal_code']
+    postal_code = int(postal_code)
+
+    df = pd.read_csv('house_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
     
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+
+    print(f'{round(difference/price_sqm* 100,2)} % difference') 
+
+
     return render_template('result.html', 
                             prediction_text1='Predicted house price is € {}'.format(output),
-                            prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
+                            text2='Predicted Price per Square Meter : € {} /m2'.format(pricem2),
+                            text3='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text4='Different between predicted price/m2  and average price/m2 is {} %'.format(round(difference/price_sqm* 100,2)))
 
 @app.route('/predict_apartment_postal_code',methods=['GET','POST'])
 def predict_apartment_postal_code():
@@ -225,10 +254,38 @@ def predict_apartment_postal_code():
 
     pricem2 = round(output/int(final_features['house_area'][0]))
 
+    # to get average apartment price at postal code given
+
+    postal_code = final_features['postal_code']
+    postal_code = int(postal_code)
+
+    df = pd.read_csv('apartment_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
+    
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+
+    print(f'{round(difference/price_sqm* 100,2)} % difference') 
+
+
     return render_template('result.html', 
                             prediction_text1='Predicted apartment price is € {}'.format(output),
-                            prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
-
+                            text2='Predicted Price per Square Meter : € {} /m2'.format(pricem2),
+                            text3='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text4='Different between predicted price/m2  and average price/m2 is {} %'.format(round(difference/price_sqm* 100,2)))
+     
 
 @app.route('/average_house_price', methods=['GET','POST'])
 def average_house_price():
