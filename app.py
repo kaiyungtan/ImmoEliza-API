@@ -223,15 +223,10 @@ def predict_house_postal_code():
 
     difference = pricem2 - price_sqm
 
-
-    print(f'{round(difference/price_sqm* 100,2)} % difference') 
-
-
     return render_template('result.html', 
-                            prediction_text1='Predicted house price is € {}'.format(output),
-                            text2='Predicted Price per Square Meter : € {} /m2'.format(pricem2),
-                            text3='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
-                            text4='Different between predicted price/m2  and average price/m2 is {} %'.format(round(difference/price_sqm* 100,2)))
+                            prediction_text1='Predicted house price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
 @app.route('/predict_apartment_postal_code',methods=['GET','POST'])
 def predict_apartment_postal_code():
@@ -276,15 +271,10 @@ def predict_apartment_postal_code():
 
     difference = pricem2 - price_sqm
 
-
-    print(f'{round(difference/price_sqm* 100,2)} % difference') 
-
-
     return render_template('result.html', 
-                            prediction_text1='Predicted apartment price is € {}'.format(output),
-                            text2='Predicted Price per Square Meter : € {} /m2'.format(pricem2),
-                            text3='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
-                            text4='Different between predicted price/m2  and average price/m2 is {} %'.format(round(difference/price_sqm* 100,2)))
+                            prediction_text1='Predicted apartment price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
+                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
      
 
 @app.route('/average_house_price', methods=['GET','POST'])
