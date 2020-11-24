@@ -230,8 +230,8 @@ def predict_apartment_postal_code():
                             prediction_text2='Price per Square Meter : € {} /m2'.format(pricem2))
 
 
-@app.route('/map_postal_code', methods=['GET','POST'])
-def map_postal_code():
+@app.route('/average_house_price', methods=['GET','POST'])
+def average_house_price():
 
     postal_code = 1000
     #house = request.get_json(force=True)
@@ -267,6 +267,54 @@ def map_postal_code():
 
 
     return m._repr_html_()
+
+@app.route('/average_apartment_price', methods=['GET','POST'])
+def average_apartment_price():
+
+    postal_code = 1000
+    #house = request.get_json(force=True)
+    #postal_code = house['postal_code'] 
+
+    #postal_code = [x for x in house.values()]
+    #postal_code = house.postal_code
+
+    df = pd.read_csv('apartment_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
+    long,lat = df['longitude'][index][index[0]] ,df['lattitude'][index][index[0]] 
+
+    m = folium.Map(location=[lat,long] ,zoom_start=15)
+
+    folium.Marker(
+            location = [lat,long],
+            tooltip =   '<li><bold>Property : ' 'House'+
+                        '<li><bold>Region : '+str(df.loc[index]['region'].tolist()[0])+
+                        '<li><bold>Province : '+str(df.loc[index]['province'].tolist()[0])+
+                        '<li><bold>City Name : '+str(df.loc[index]['city_name'].tolist()[0])+
+                        '<li><bold>Postal Code : '+str(df.loc[index]['postal_code'].tolist()[0])+
+                        '<li><bold>Average Price_sqm : '+str(round(df.loc[index]['price_sqm'].tolist()[0])),
+            popup = [lat,long]).add_to(m)
+
+
+    return m._repr_html_()
+
+@app.route('/map_average_house_price', methods=['GET','POST'])
+def map_average_house_price():
+    return render_template("average_price_per_sqm_belgium_house.html")
+
+
+@app.route('/map_average_apartment_price', methods=['GET','POST'])
+def map_average_apartment_price():
+    return render_template("average_price_per_sqm_belgium_apartment.html")
+ 
 
 
 
