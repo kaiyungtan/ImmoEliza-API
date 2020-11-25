@@ -7,10 +7,13 @@ import folium
 
 app = Flask(__name__)
 
-# models for predicting house or apartment price
+# models for predicting house or apartment price with city name
 
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
 model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
+
+# models for predicting house or apartment price with postal code
+
 model_house_postal_code = joblib.load('ridge_model_house_25.11.2020.pkl')
 model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl')
 
