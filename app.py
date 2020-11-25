@@ -47,11 +47,11 @@ def predict_house_tojson():
             'open_fire':'no',
             'terrace': 'yes',
             'garden': 'yes',
-            'surface_of_the_land' : 398,
             'number_of_facades': 3,
             'swimming_pool': 'no',
             'state_of_the_building': 'to renovate',
-            'construction_year' : 1930}
+            'construction_year' : 1930,
+            'surface_of_the_land' : 398}
 
     columns = [x for x in house.keys()]
     int_features = [x for x in house.values()]
@@ -243,8 +243,8 @@ def predict_house_postal_code():
     For rendering results on HTML GUI
     '''
     columns = ['postal_code', 'number_of_rooms', 'house_area', 'fully_equipped_kitchen',
-    'open_fire', 'terrace', 'garden', 'surface_of_the_land','number_of_facades', 
-    'swimming_pool', 'state_of_the_building','construction_year']
+    'open_fire', 'terrace', 'garden','number_of_facades', 'swimming_pool', 
+    'state_of_the_building','construction_year','surface_of_the_land']
 
     int_features = [x for x in request.form.values()]
     int_features = np.array(int_features) 
