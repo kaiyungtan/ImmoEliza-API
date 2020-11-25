@@ -96,8 +96,38 @@ def predict_house_tojson2():
     prediction = model_house_postal_code.predict(final_features)
 
     output = round(prediction[0])
+
+    pricem2 = round(output/int(final_features['house_area'][0]))
      
-    return str(output) 
+    # to get average house price at postal code given
+
+    postal_code = final_features['postal_code']
+    postal_code = int(postal_code)
+
+    df = pd.read_csv('house_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
+    
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+    difference_pct = round(difference/price_sqm* 100,1)
+
+    return {"predicted price" : str(output),
+            "predicted price_sqm" : str(pricem2),
+            "City average price_sqm" : str(price_sqm),
+            "difference(%)" : str(difference_pct)
+            }
 
 @app.route("/predict_apartment_tojson2", methods=['GET','POST'])
 def predict_apartment_tojson2():
@@ -124,8 +154,38 @@ def predict_apartment_tojson2():
     prediction = model_apartment_postal_code.predict(final_features)
 
     output = round(prediction[0])
-     
-    return str(output) 
+
+    pricem2 = round(output/int(final_features['house_area'][0]))
+
+    # to get average apartment price at postal code given
+
+    postal_code = final_features['postal_code']
+    postal_code = int(postal_code)
+
+    df = pd.read_csv('apartment_price_sqm.csv')
+    df['postal_code'] = df['postal_code'].astype('int')
+
+    index = []
+
+    for i in range(df.shape[0]):
+
+        if df['postal_code'][i] == postal_code :
+            index.append(i)
+            break
+        continue
+    
+    price_sqm = round(df.iloc[index]['price_sqm'].values[0])
+    city_name = df.iloc[index]['city_name'].values[0]
+
+    difference = pricem2 - price_sqm
+
+    difference_pct = round(difference/price_sqm* 100,1)
+
+    return {"predicted price" : str(output),
+            "predicted price_sqm" : str(pricem2),
+            "City average price_sqm" : str(price_sqm),
+            "difference(%)" : str(difference_pct)
+            }
 
 @app.route('/predict_house',methods=['GET','POST'])
 def predict_house():
