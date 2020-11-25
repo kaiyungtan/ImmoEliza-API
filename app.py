@@ -8,7 +8,7 @@ import folium
 app = Flask(__name__)
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
 model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
-model_house_postal_code = joblib.load('ridge_model_house_21.11.2020.pkl')
+model_house_postal_code = joblib.load('ridge_model_house_25.11.2020.pkl')
 model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl')
 
 @app.route("/")
@@ -80,12 +80,12 @@ def predict_house_tojson2():
     fully_equipped_kitchen = house['fully_equipped_kitchen'] 
     open_fire = house['open_fire']  
     terrace = house['terrace']  
-    garden = house['garden']   
-    surface_of_the_land = house['surface_of_the_land']   
+    garden = house['garden']      
     number_of_facades = house['number_of_facades']   
     swimming_pool = house['swimming_pool']  
     state_of_the_building = house['state_of_the_building']   
     construction_year = house['construction_year'] 
+    surface_of_the_land = house['surface_of_the_land']
 
     columns = [x for x in house.keys()]
     int_features = [x for x in house.values()]
@@ -337,12 +337,16 @@ def predict_apartment_postal_code():
 @app.route('/average_house_price', methods=['GET','POST'])
 def average_house_price():
 
-    postal_code = 1000
-    #house = request.get_json(force=True)
-    #postal_code = house['postal_code'] 
+    #postal_code = 1000
+    house = request.get_json(force=True)
+    postal_code = house['postal_code'] 
 
     #postal_code = [x for x in house.values()]
     #postal_code = house.postal_code
+
+    columns = [x for x in house.keys()]
+    postal_code = [x for x in house.values()]
+     
 
     df = pd.read_csv('house_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
