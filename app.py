@@ -123,10 +123,10 @@ def predict_house_tojson2():
 
     difference_pct = round(difference/price_sqm* 100,1)
 
-    return {"predicted price" : str(output),
-            "predicted price_sqm" : str(pricem2),
-            f"{city_name} average price_sqm" : str(price_sqm),
-            "difference(%)" : str(difference_pct)
+    return {"1. predicted price" : str(output),
+            "2. predicted price_sqm" : str(pricem2),
+            f"3. {city_name} average price_sqm" : str(price_sqm),
+            "4. difference(%)" : str(difference_pct)
             }
 
 @app.route("/predict_apartment_tojson2", methods=['GET','POST'])
@@ -181,10 +181,10 @@ def predict_apartment_tojson2():
 
     difference_pct = round(difference/price_sqm* 100,1)
 
-    return {"predicted price" : str(output),
-            "predicted price_sqm" : str(pricem2),
-            f"{city_name} average price_sqm" : str(price_sqm),
-            "difference(%)" : str(difference_pct)
+    return {"1. predicted price" : str(output),
+            "2. predicted price_sqm" : str(pricem2),
+            f"3. {city_name} average price_sqm" : str(price_sqm),
+            "4. difference(%)" : str(difference_pct)
             }
 
 @app.route('/predict_house',methods=['GET','POST'])
