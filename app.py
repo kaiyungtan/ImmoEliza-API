@@ -125,7 +125,7 @@ def predict_house_tojson2():
 
     return {"predicted price" : str(output),
             "predicted price_sqm" : str(pricem2),
-            "City average price_sqm" : str(price_sqm),
+            f"{city_name} average price_sqm" : str(price_sqm),
             "difference(%)" : str(difference_pct)
             }
 
@@ -183,7 +183,7 @@ def predict_apartment_tojson2():
 
     return {"predicted price" : str(output),
             "predicted price_sqm" : str(pricem2),
-            "City average price_sqm" : str(price_sqm),
+            f"{city_name} average price_sqm" : str(price_sqm),
             "difference(%)" : str(difference_pct)
             }
 
