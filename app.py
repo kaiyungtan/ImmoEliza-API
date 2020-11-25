@@ -6,69 +6,51 @@ import json
 import folium
 
 app = Flask(__name__)
+
+# models for predicting house or apartment price
+
 model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
 model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
 model_house_postal_code = joblib.load('ridge_model_house_25.11.2020.pkl')
 model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl')
 
+# route to home
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
+# route direct to predict house price by city name
 @app.route("/house",methods=['GET','POST'])
 def house():
     return render_template("predict_house.html")
 
+# route direct to predict apartment price by city name
 @app.route("/apartment",methods=['GET','POST'])
 def apartment():
     return render_template("predict_apartment.html")
 
+# route to direct predict house price by postal code
 @app.route("/house_postal_code")
 def house_postal_code():
     return render_template("predict_house_postal_code.html")
 
+# route to direct predict apartment price by postal code
 @app.route("/apartment_postal_code", methods = ['GET'])
 def apartment_postal_code():
     return render_template("predict_apartment_postal_code.html")
 
-
+# return result of the prediction
 @app.route("/result")
 def result():
     return render_template("result.html")
 
-@app.route("/predict_house_tojson", methods=['GET','POST'])
-def predict_house_tojson():
 
-    house = {'postal_code': '3271',
-            'number_of_rooms': 4,
-            'house_area' : 226,
-            'fully_equipped_kitchen': 'yes',
-            'open_fire':'no',
-            'terrace': 'yes',
-            'garden': 'yes',
-            'number_of_facades': 3,
-            'swimming_pool': 'no',
-            'state_of_the_building': 'to renovate',
-            'construction_year' : 1930,
-            'surface_of_the_land' : 398}
-
-    columns = [x for x in house.keys()]
-    int_features = [x for x in house.values()]
-    int_features = np.array(int_features) 
-    int_features = int_features.reshape(-1,12)
-    final_features = pd.DataFrame(int_features,columns=columns)
-
-    prediction = model_house_postal_code.predict(final_features)
-
-    output = round(prediction[0])
-    
-    final_features['Predicted Price'] = output
-
-    result = final_features.to_json(index=False,orient="split")
-    parsed = json.loads(result)
-    
-    return  json.dumps(parsed, indent=4) 
+# API route (House) for web dev, return json file with the following output:
+# 1. predicted price  
+# 2. predicted price_sqm
+# 3. "city" average price_sqm"  
+# 4. difference(%) between predicted price_sqm and average price_sqm
 
 @app.route("/predict_house_tojson2", methods=['GET','POST'])
 def predict_house_tojson2():
@@ -129,6 +111,13 @@ def predict_house_tojson2():
             "4. difference(%)" : str(difference_pct)
             }
 
+
+# API route (Apartment) for web dev, return json file with the following output:
+# 1. predicted price  
+# 2. predicted price_sqm
+# 3. "city" average price_sqm"  
+# 4. difference(%) between predicted price_sqm and average price_sqm
+
 @app.route("/predict_apartment_tojson2", methods=['GET','POST'])
 def predict_apartment_tojson2():
 
@@ -187,6 +176,9 @@ def predict_apartment_tojson2():
             "4. difference(%)" : str(difference_pct)
             }
 
+# route to predict house by city_name
+# return 3 prediction text and direct to result.html
+
 @app.route('/predict_house',methods=['GET','POST'])
 def predict_house():
     '''
@@ -235,12 +227,9 @@ def predict_house():
                             text2='Average Price in {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
-
-    #final_features['Predicted Price'] = output
-    #result = final_features.to_json(index=False,orient="split")
-    #parsed = json.loads(result)
-    #return json.dumps(parsed, indent=4) 
     
+# route to predict apartment by city_name
+# return 3 prediction text and direct to result.html
 
 @app.route('/predict_apartment',methods=['GET','POST'])
 def predict_apartment():
@@ -291,11 +280,8 @@ def predict_apartment():
                             text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
 
-    #final_features['Predicted Price'] = output
-    #result = final_features.to_json(index=False,orient="split")
-    #parsed = json.loads(result)
-    #return json.dumps(parsed, indent=4)
-    
+# route to predict house by postal code
+# return 3 prediction text and direct to result.html
 
 @app.route('/predict_house_postal_code',methods=['GET','POST'])
 def predict_house_postal_code():
@@ -345,6 +331,10 @@ def predict_house_postal_code():
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
+
+# route to predict apartment by postal code
+# return 3 prediction text and direct to result.html
+
 @app.route('/predict_apartment_postal_code',methods=['GET','POST'])
 def predict_apartment_postal_code():
     '''
@@ -393,13 +383,15 @@ def predict_apartment_postal_code():
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
      
+# route to render average_house_price
 
 @app.route('/average_house_price', methods=['GET','POST'])
 def average_house_price():
-
-    #postal_code = 1000
-    house = request.get_json(force=True)
-    postal_code = house['postal_code'] 
+    # given a postal code to render average house price
+    postal_code = 1000
+    
+    #house = request.get_json(force=True)
+    #postal_code = house['postal_code'] 
 
     #postal_code = [x for x in house.values()]
     #postal_code = house.postal_code
@@ -436,15 +428,12 @@ def average_house_price():
 
     return m._repr_html_()
 
+# route to render average_apartment_price
+
 @app.route('/average_apartment_price', methods=['GET','POST'])
 def average_apartment_price():
-
+    # given a postal code to render average apartment price
     postal_code = 1000
-    #house = request.get_json(force=True)
-    #postal_code = house['postal_code'] 
-
-    #postal_code = [x for x in house.values()]
-    #postal_code = house.postal_code
 
     df = pd.read_csv('apartment_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
@@ -474,11 +463,12 @@ def average_apartment_price():
 
     return m._repr_html_()
 
+# route to render average houseprice for cities
 @app.route('/map_average_house_price', methods=['GET','POST'])
 def map_average_house_price():
     return render_template("average_price_per_sqm_belgium_house.html")
 
-
+# route to render average apartmentprice for cities
 @app.route('/map_average_apartment_price', methods=['GET','POST'])
 def map_average_apartment_price():
     return render_template("average_price_per_sqm_belgium_apartment.html")
