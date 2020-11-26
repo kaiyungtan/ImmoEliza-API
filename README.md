@@ -6,10 +6,11 @@ To create an API that will make price forecasts on houses according to certain p
 
 * Website (AI Dev) - https://immoeliza-real-estate.herokuapp.com/
 
-* Website (Web Dev) - 
-
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
 
+* Website (Web Dev) - 
+
+* Github repo (Web Dev) -
 
 ## Background
 
@@ -110,19 +111,19 @@ note: The house price index measures the price evolution with the assumption tha
 
 ### Features of the dataset:
 <ol>
-<li> postal_code (str): Postal code of city.</li>
-<li> city_name (str): city names in Belgium.</li>
-<li> number_of_rooms (int): The number of rooms of the property.</li>
-<li> house_area (int): The area (m2) of the house (floors).</li>
-<li> fully_equipped_kitchen (str): yes/no </li>
-<li> open_fire (str): yes/no </li>
-<li> terrace (str): yes/no </li>
-<li> garden (str): yes/no </li>
-<li> number_of_facades (int): The number of facades (0 to 4). </li>
-<li> swimming_pool (str): yes/no </li>
-<li> state_of_the_building (str): as new/good/just renovated/to renovate/unknown </li>
-<li> construction_year (int): The property built's year. </li>
-<li> surface_of_the_land (int): The area (m2) of the land. (for house only) </li>
+	<li> postal_code (str): Postal code of city.</li>
+	<li> city_name (str): city names in Belgium.</li>
+	<li> number_of_rooms (int): The number of rooms of the property.</li>
+	<li> house_area (int): The area (m2) of the house (floors).</li>
+	<li> fully_equipped_kitchen (str): yes/no </li>
+	<li> open_fire (str): yes/no </li>
+	<li> terrace (str): yes/no </li>
+	<li> garden (str): yes/no </li>
+	<li> number_of_facades (int): The number of facades (0 to 4). </li>
+	<li> swimming_pool (str): yes/no </li>
+	<li> state_of_the_building (str): as new/good/just renovated/to renovate/unknown </li>
+	<li> construction_year (int): The property built's year. </li>
+	<li> surface_of_the_land (int): The area (m2) of the land. (for house only) </li>
 </ol>
 
 ### Target of the dataset:
@@ -140,16 +141,16 @@ note: The house price index measures the price evolution with the assumption tha
 * Libraries used in this project as follow:
 	<details>
 	  <summary>Libraries</summary>
-		<li> from sklearn.model_selection import train_test_split</li> 
-		<li> from sklearn.preprocessing import StandardScaler,OneHotEncoder</li> 
-		<li> from sklearn.compose import ColumnTransformer</li> 
-		<li> from sklearn.pipeline import Pipeline</li> 
-		<li> from sklearn.linear_model import LinearRegression</li> 
-		<li> from sklearn.linear_model import Lasso,Ridge,ElasticNet</li> 
-		<li> from sklearn.tree import DecisionTreeRegressor</li> 
-		<li> from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor </li> 
-		<li> from xgboost import XGBRegressor</li> 
-		<li> from sklearn.metrics import mean_squared_error, r2_score </li>  
+			<li> from sklearn.model_selection import train_test_split</li> 
+			<li> from sklearn.preprocessing import StandardScaler,OneHotEncoder</li> 
+			<li> from sklearn.compose import ColumnTransformer</li> 
+			<li> from sklearn.pipeline import Pipeline</li> 
+			<li> from sklearn.linear_model import LinearRegression</li> 
+			<li> from sklearn.linear_model import Lasso,Ridge,ElasticNet</li> 
+			<li> from sklearn.tree import DecisionTreeRegressor</li> 
+			<li> from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor </li> 
+			<li> from xgboost import XGBRegressor</li> 
+			<li> from sklearn.metrics import mean_squared_error, r2_score </li>  
 	</details>
 
 * The following diagram shows the process of modeling. 
@@ -181,17 +182,16 @@ note: The house price index measures the price evolution with the assumption tha
 
 	<details>
 	  <summary>House for sale</summary>
-		<li> House for sale</li> 
-		<li> €230,000</li> 
-		<li> 4 bedrooms  226 m²square meters</li> 
-		<li> Bredestraat 70 3271 — Averbode</li> 
-		<li> Construction year 1930</li> 
-		<li> Building condition To renovate</li> 
-		<li> Facades 3</li> 
-		<li> Kitchen type Installed</li> 
-		<li> Surface of the plot 398 m²square meters</li> 
-		<li> Garden surface 150 m²square meters</li> 
-		<li> Terrace surface 25 m²square meters</li> 
+			<li> €230,000</li> 
+			<li> 4 bedrooms  226 m²square meters</li> 
+			<li> Bredestraat 70 3271 — Averbode</li> 
+			<li> Construction year 1930</li> 
+			<li> Building condition To renovate</li> 
+			<li> Facades 3</li> 
+			<li> Kitchen type Installed</li> 
+			<li> Surface of the plot 398 m²square meters</li> 
+			<li> Garden surface 150 m²square meters</li> 
+			<li> Terrace surface 25 m²square meters</li> 
 	</details>
 
 * create X_new features for predictions
@@ -239,7 +239,6 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 	<details>
 	  <summary>Apartment for sale</summary>
-		<li>Apartment for sale</li> 
 		<li>€320,000</li> 
 		<li>3 bedrooms | 130 m² square meters</li> 
 		<li> 1070 — Anderlecht</li> 
