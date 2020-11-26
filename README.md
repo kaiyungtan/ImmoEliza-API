@@ -80,13 +80,15 @@ note: The house price index measures the price evolution with the assumption tha
 
 * In order to get geographical informations about the data, Postal Codes dataset from [https://data.gov.be/](https://data.gov.be/fr/dataset/328ba4f140ba0e870dfc9c70635fe7c1840980b1) is merged with  the real estate dataset during a previous BeCode [Real Estate Data analysis](https://github.com/kaiyungtan/Real-Estate-data-analysis).
 
+
+## Data Preparation
+
 * After further data cleaning, the dataset was reduced to 24040 rows (observations) with 19 columns.(belgium_real_estate_2020_rev1_19.11.2020.csv)
 
 * Then the dataset were seperated to 2 dataset seperately namely df_house for houses and df_apartment for apartements.(Belgium_Real_Estate_2020_Immoweb - House & Apartment.ipynb)
 
 	- df_house (10254 rows, 19 columns)(belgium_houses_20.11.2020.csv)
 	- df_apartment (13207 rows, 18 columns) (belgium_apartments_20.11.2020.csv')
-
 
 ### Features of the dataset:
 <ol>
@@ -110,15 +112,17 @@ note: The house price index measures the price evolution with the assumption tha
 <ol>
 <li> price (float) : Price (€) of the property.</li> 
 </ol>
- 
 
-## Data Preparation
+*  to compare predicted price square per meter with the average price square per meter of a city, a seperate dataset was prepared to have only 7 columns:(Data_analysis & Create Price_Sqm.ipynb)
+		- city_name	
+		- postal_code	
+		- price_sqm	
+		- region	
+		- province	
+		- longitude	
+		- lattitude
 
-*  
-
-
-
-
+* 2 folium map were created to show average price square per meter in each city for houses and apartement. [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)[average_apartment_price] (https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
 
 
 ## Modeling
