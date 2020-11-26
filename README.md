@@ -212,7 +212,7 @@ note: The house price index measures the price evolution with the assumption tha
 * The result show predicted price for the house is € 228964.0
 and -0.45 % difference compare to the posted asking price for the house.
 
-![image](https://user-images.githubusercontent.com/69633814/100379623-762c6700-3015-11eb-937f-c9eb76935394.png)
+![image](https://user-images.githubusercontent.com/69633814/100384970-b691e200-3021-11eb-9979-0cf1fb82e7f9.png)
 
 ## Deployment on Heruko
 
