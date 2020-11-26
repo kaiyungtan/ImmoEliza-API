@@ -66,8 +66,7 @@ You need to create an API that will make price forecasts on houses according to 
 * In order to build machine models from this dataset, the dataset were seperated to 2 dataset seperately namely df_house for house and df_apartment for apartement.
 
 
-<details>
-  <summary><h5>Features of the dataset<h5></summary>
+### Features of the dataset:
 <ol>
 <li> postal_code (str): Postal code of city.</li>
 <li> city_name (str): city names in Belgium.</li>
@@ -84,11 +83,12 @@ You need to create an API that will make price forecasts on houses according to 
 <li> surface_of_the_land (int): The area (m2) of the land. (for house only) </li>
 </ol>
 
-Our target is:
+### Target of the dataset:
 
-- **price** *float*: Price (€) of the property. 
-
-</details>
+<ol>
+<li> price (float) : Price (€) of the property.</li> 
+</ol>
+ 
 
 ## Data Preparation
 
