@@ -45,30 +45,6 @@ You need to create an API that will make price forecasts on houses according to 
 - [X] to show the difference (%) between house/apartment sq/m2 versus the average sq/m2 for the city
 
 
-
-<details>
-  <summary>Features of the dataset</summary>
-<ol>
-<li> postal_code (str): Postal code of city.</li>
-<li> city_name (str): city names in Belgium.</li>
-<li> number_of_rooms (int): The number of rooms of the property.</li>
-<li> house_area (int): The area (m2) of the house (floors).</li>
-<li> fully_equipped_kitchen (str): yes/no </li>
-<li> open_fire (str): yes/no </li>
-<li> terrace (str): yes/no </li>
-<li> garden (str): yes/no </li>
-<li> number_of_facades (int): The number of facades (0 to 4). </li>
-<li> swimming_pool (str): yes/no </li>
-<li> state_of_the_building (str): as new/good/just renovated/to renovate/unknown </li>
-<li> construction_year (int): The property built's year. </li>
-<li> surface_of_the_land (int): The area (m2) of the land. (for house only) </li>
-</ol>
-Our target is:
-
-- **price** *float*: Price (€) of the property. 
-
-</details>
-
 ## Process Overview
 
 ![image](https://user-images.githubusercontent.com/69633814/100321235-a696e580-2fc2-11eb-9f09-36423760b5b4.png)
@@ -89,8 +65,30 @@ Our target is:
 
 * In order to build machine models from this dataset, the dataset were seperated to 2 dataset seperately namely df_house for house and df_apartment for apartement.
 
-* df_house has 12 features while df_apartment has 11 features.  
 
+<details>
+  <summary><h5>Features of the dataset<h5></summary>
+<ol>
+<li> postal_code (str): Postal code of city.</li>
+<li> city_name (str): city names in Belgium.</li>
+<li> number_of_rooms (int): The number of rooms of the property.</li>
+<li> house_area (int): The area (m2) of the house (floors).</li>
+<li> fully_equipped_kitchen (str): yes/no </li>
+<li> open_fire (str): yes/no </li>
+<li> terrace (str): yes/no </li>
+<li> garden (str): yes/no </li>
+<li> number_of_facades (int): The number of facades (0 to 4). </li>
+<li> swimming_pool (str): yes/no </li>
+<li> state_of_the_building (str): as new/good/just renovated/to renovate/unknown </li>
+<li> construction_year (int): The property built's year. </li>
+<li> surface_of_the_land (int): The area (m2) of the land. (for house only) </li>
+</ol>
+
+Our target is:
+
+- **price** *float*: Price (€) of the property. 
+
+</details>
 
 ## Data Preparation
 
