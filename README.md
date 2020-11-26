@@ -220,13 +220,23 @@ and -0.45 % difference compare to the posted asking price for the house.
 	* heroku open
 
 * Deployment successful.  
-* Add github link on Home Page.
-* Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
 
-* Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
+* to test a new / live unseen data, an example of new immoweb were chosen:
 
 * https://www.immoweb.be/en/classified/apartment/for-sale/anderlecht/1070/9042073?searchId=5fb749cc3354c
-	* Apartment for sale €320,000
+
+	* Apartment for sale 
+	* €320,000
+	* 3 bedrooms | 130 m² square meters
+	* 1070 — Anderlecht
+	* Construction year	2017
+	* Building condition	As new
+	* Facades	2
+	* Kitchen type	USA hyper equipped
+	* Terrace surface	14 m² square meters
+ 
+* Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
+
 <img width="1143" alt="Screenshot 2020-11-26 at 19 02 01" src="https://user-images.githubusercontent.com/69633814/100381998-9a3e7700-301a-11eb-8f40-7161681a2cf5.png">
 
 * Result the predicted price for the apartment is € 324,034 and 1.3 % difference compare to the posted asking price for the apartment.
