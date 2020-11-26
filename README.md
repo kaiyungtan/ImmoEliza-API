@@ -53,19 +53,39 @@ You need to create an API that will make price forecasts on houses according to 
 
 ## Business Understanding 
 
-* Prediction of a real estate price is not an easy task. It involves a lot of variables. The owner of the real estate determine the price based on many factors. The property itself is of course the main factor to set the price. However the location and facilities around the property can hughly impact the price. In addition, the economy situation or inflation of the country also play a part in influencing the price.
+* Getting a good estimate of the price of a house or apartment is hard even for the most seasoned real estate agents. It involves a lot of variables. The owner of the property can determine the price based on many factors. The property itself is of course the main factor to determine the price. However the location and facilities around the property can hugely impact the price. In addition, the inflation rate or personal reason can also play a part in influencing the price.
 
-* In this project, we are using machine learning to learn from the features of the real estate to price the price. It was constrainted to the features selected by the models. It neither take into account of the facilities around the real estate , nor it include the factor of COVID-19 effect on the housing price.
+* In this project, we are using different machine learning algorithms to learn from the features of the real estate in order to predict the price. The models neither take into account of the facilities around the real estate , nor it include other external factors i.e COVID-19 effect on the housing prices.
+
+* The price prediction is based on the price that posted on the website and not the actual transaction of the property. With this in mind, we can assume that when listing the property , most of the owner will probably put a higher price for room of negoatiation.
+
+* According to [STATBEL](https://statbel.fgov.be/en/themes/housing/house-price-index#news):
+
+	- The observed annual inflation rate for house prices amounts to 4.5 % in the second quarter of 2020 compared to 3.5 % in the previous quarter.
+
+	-The average inflation rate for the last four quarters amounts to 4.3 %.
+
+	-The house price index went up by 1.4 % in the second quarter of 2020 compared to the previous quarter.
+
+	- The house price index can be broken down by new houses and existing houses. In the second quarter of 2020, annual inflation amounted to 5.3 % for new houses and 4.3 % for existing houses. 
+
+note: The house price index measures the price evolution with the assumption that the characteristics of the property sold remain unchanged.
+
 
 ## Data Understanding
 
-* The dataset for the real estate were scrapped form [Immoweb](https://www.immoweb.be/) probably the biggest real estate website in Belgium mid of September 2020 with more than 50,000 of properties including houses and apartments.
-
-* Data cleaning and analysis were done on this dataset. [Real Estate Data analysis](https://github.com/kaiyungtan/Real-Estate-data-analysis)
+* The dataset for the real estate were scrapped form [Immoweb](https://www.immoweb.be/) probably the biggest real estate website in Belgium mid of September 2020 with more than 50,000 of properties including houses and apartments from a previous BeCode [Data Collecting Challenge](https://github.com/kaiyungtan/challenge-collecting-data).
 
 * Initially the dataset have 52077 rows and 20 columns and after data cleaning it was reduced to 40395 rows (observations) and 18 columns.
 
-* In order to build machine models from this dataset, the dataset were seperated to 2 dataset seperately namely df_house for house and df_apartment for apartement.
+* In order to get geographical informations about the data, Postal Codes dataset from [https://data.gov.be/](https://data.gov.be/fr/dataset/328ba4f140ba0e870dfc9c70635fe7c1840980b1) is merged with  the real estate dataset during a previous BeCode [Real Estate Data analysis](https://github.com/kaiyungtan/Real-Estate-data-analysis).
+
+* After further data cleaning, the dataset was reduced to 24040 rows (observations) with 19 columns.(belgium_real_estate_2020_rev1_19.11.2020.csv)
+
+* Then the dataset were seperated to 2 dataset seperately namely df_house for houses and df_apartment for apartements.(Belgium_Real_Estate_2020_Immoweb - House & Apartment.ipynb)
+
+	- df_house (10254 rows, 19 columns)(belgium_houses_20.11.2020.csv)
+	- df_apartment (13207 rows, 18 columns) (belgium_apartments_20.11.2020.csv')
 
 
 ### Features of the dataset:
@@ -95,6 +115,11 @@ You need to create an API that will make price forecasts on houses according to 
 ## Data Preparation
 
 *  
+
+
+
+
+
 
 ## Modeling
 
