@@ -132,9 +132,11 @@ note: The house price index measures the price evolution with the assumption tha
 
 ## Modeling
 
-* The following diagram shows the process of modeling. 
+*  The objective of machine learning is not a model that does well on training data, but one that demonstrates it satisfies the business need and can be deployed on live data.
 
-* The main libraries used as follow:
+* A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data.
+
+* Libraries used in this project as follow:
 
 	* from sklearn.model_selection import train_test_split
 	* from sklearn.preprocessing import StandardScaler,OneHotEncoder
@@ -147,16 +149,62 @@ note: The house price index measures the price evolution with the assumption tha
 	* from xgboost import XGBRegressor
 	* from sklearn.metrics import mean_squared_error, r2_score  
 
+* The following diagram shows the process of modeling. 
+
 ![image](https://user-images.githubusercontent.com/69633814/100377837-5778a100-3012-11eb-958d-5e5862ffb533.png)
 
-*  The objective of machine learning is not a model that does well on training data, but one that demonstrates it satisfies the business need and can be deployed on live data.
+* random search cross validation were used to find the best parameter setting that gave the best results on the hold out data.
 
-* A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data.
+* Libraries used as follow:
+	* from sklearn.model_selection import RandomizedSearchCV
+	* from sklearn.metrics import make_scorer
 
 
 ## Evaluation
 
-*  
+*  After evaluating 8 models run on the test set, a ridge model (Linear least squares with l2 regularization) was selected for house price prediction. 
+* Train accuracy: 0.77 Test accuracy: 0.73
+
+* model was saved using joblib library.
+
+* to test a new / live unseen data, an example of new immoweb were chosen:
+
+https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
+
+House for sale
+€230,000
+4 bedrooms  226 m²square meters
+Bredestraat 70 3271 — Averbode
+Construction year 1930
+Building condition To renovate
+Facades 3
+Kitchen type Installed
+Kitchen surface 14 m²square meters
+Surface of the plot 398 m²square meters
+Garden surface 150 m²square meters
+Terrace surface 25 m²square meters
+
+
+X_new = {
+'postal_code':'3271',
+'number_of_rooms': 4,
+'house_area' : 226,
+'fully_equipped_kitchen': 'yes',
+'open_fire':'no',
+'terrace':'yes',
+'garden':'yes',
+'number_of_facades': 3,
+'swimming_pool': 'no',
+'state_of_the_building': 'to renovate',
+'construction_year' : 1930,
+'surface_of_the_land' : 398}
+
+The result show predicted price for the house is € 228964.0
+and -0.45 % difference compare to the posted asking price for the house.
+
+![image](https://user-images.githubusercontent.com/69633814/100379623-762c6700-3015-11eb-937f-c9eb76935394.png)
+
+
 
 ## Deployment
 
