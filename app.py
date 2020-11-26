@@ -9,13 +9,13 @@ app = Flask(__name__)
 
 # models for predicting house or apartment price with city name
 
-model_house = joblib.load('xgb_rs_model_house_20.11.2020.pkl')
-model_apartment = joblib.load('xgb_rs_model_apartment_20.11.2020.pkl')
+model_house = joblib.load('./model/xgb_rs_model_house_20.11.2020.pkl')
+model_apartment = joblib.load('./model/xgb_rs_model_apartment_20.11.2020.pkl')
 
 # models for predicting house or apartment price with postal code
 
-model_house_postal_code = joblib.load('ridge_model_house_25.11.2020.pkl')
-model_apartment_postal_code = joblib.load('gbr_rs_model_apartment_21.11.2020.pkl')
+model_house_postal_code = joblib.load('./model/ridge_model_house_25.11.2020.pkl')
+model_apartment_postal_code = joblib.load('./model/gbr_rs_model_apartment_21.11.2020.pkl')
 
 # route to home
 @app.route("/")
@@ -89,7 +89,7 @@ def predict_house_tojson2():
     postal_code = final_features['postal_code']
     postal_code = int(postal_code)
 
-    df = pd.read_csv('house_price_sqm.csv')
+    df = pd.read_csv('./data/house_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -154,7 +154,7 @@ def predict_apartment_tojson2():
     postal_code = final_features['postal_code']
     postal_code = int(postal_code)
 
-    df = pd.read_csv('apartment_price_sqm.csv')
+    df = pd.read_csv('./data/apartment_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -208,7 +208,7 @@ def predict_house():
     city_name = final_features['city_name']
 
 
-    df = pd.read_csv('house_price_sqm.csv')
+    df = pd.read_csv('./data/house_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -260,7 +260,7 @@ def predict_apartment():
     city_name = final_features['city_name']
 
 
-    df = pd.read_csv('apartment_price_sqm.csv')
+    df = pd.read_csv('./data/apartment_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -312,7 +312,7 @@ def predict_house_postal_code():
     postal_code = final_features['postal_code']
     postal_code = int(postal_code)
 
-    df = pd.read_csv('house_price_sqm.csv')
+    df = pd.read_csv('./data/house_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -364,7 +364,7 @@ def predict_apartment_postal_code():
     postal_code = final_features['postal_code']
     postal_code = int(postal_code)
 
-    df = pd.read_csv('apartment_price_sqm.csv')
+    df = pd.read_csv('./data/apartment_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -403,7 +403,7 @@ def average_house_price():
     postal_code = [x for x in house.values()]
      
 
-    df = pd.read_csv('house_price_sqm.csv')
+    df = pd.read_csv('./data/house_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
@@ -438,7 +438,7 @@ def average_apartment_price():
     # given a postal code to render average apartment price
     postal_code = 1000
 
-    df = pd.read_csv('apartment_price_sqm.csv')
+    df = pd.read_csv('./data/apartment_price_sqm.csv')
     df['postal_code'] = df['postal_code'].astype('int')
 
     index = []
