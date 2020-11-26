@@ -75,9 +75,14 @@ Our target is:
 
 ## Business Understanding 
 
-* Price prediction of the real estate involves a lot
+
+* The dataset for the real estate were scrapped form Immoweb in September 2020 with more than 50,000 of properties including houses and apartments.
+
+* Data cleaning and analysis were done on this dataset. [Real Estate Data analysis](https://github.com/kaiyungtan/Real-Estate-data-analysis)
 
 * 11 features
+
+* Price prediction of the real estate involves a lot of uncertain.
 
 ## Data Understanding
 
