@@ -12,8 +12,9 @@ src="https://user-images.githubusercontent.com/69633814/100371617-5a6e9400-3008-
 
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
 
-<img src="https://user-images.githubusercontent.com/69633814/100371617-5a6e9400-3008-11eb-818f-c4fbee59744a.png">
 </td>
+
+<img src="https://user-images.githubusercontent.com/69633814/100371617-5a6e9400-3008-11eb-818f-c4fbee59744a.png">
 </tr>
 </tbody>
 </table>
