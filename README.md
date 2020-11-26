@@ -162,7 +162,12 @@ note: The house price index measures the price evolution with the assumption tha
 ## Evaluation
 
 *  After evaluating 8 models run on the test set, a ridge model (Linear least squares with l2 regularization) was selected for house price prediction. 
+
 * Train accuracy: 0.77 Test accuracy: 0.73
+
+* plot predicted vs actual overlay the regression line as show for ridge model.
+
+![image](https://user-images.githubusercontent.com/69633814/100383137-36697d80-301d-11eb-8f7e-685246ba39b0.png)
 
 * model was saved using joblib library.
 
