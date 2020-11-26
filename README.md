@@ -48,24 +48,24 @@ You need to create an API that will make price forecasts on houses according to 
 
 <details>
   <summary>Features of the dataset</summary>
-<ol>
-- **postal_code** *str*: Postal code of city.
-- **city_name** *str*: city names in Belgium.
-- **number_of_rooms** *int*: The number of rooms of the property.
-- **house_area** *int*: The area (m2) of the house (floors).
-- **fully_equipped_kitchen** *str*: yes/no 
-- **open_fire***str*: yes/no
-- **terrace** *str*: yes/no
-- **garden** *str*: yes/no
-- **number_of_facades** *int*: The number of facades (0 to 4).
-- **swimming_pool** *str*: yes/no
-- **state_of_the_building** *str*: as new/good/just renovated/to renovate/unknown
-- **construction_year** *int*: The property built's year.
-- **surface_of_the_land** *int*: The area (m2) of the land. (for house only)
-</ol>
+ 
+<li> **postal_code** *str*: Postal code of city.</li>
+<li> **city_name** *str*: city names in Belgium.</li>
+<li> **number_of_rooms** *int*: The number of rooms of the property.</li>
+<li> **house_area** *int*: The area (m2) of the house (floors).</li>
+<li> **fully_equipped_kitchen** *str*: yes/no </li>
+<li> **open_fire***str*: yes/no </li>
+<li> **terrace** *str*: yes/no </li>
+<li> **garden** *str*: yes/no </li>
+<li> **number_of_facades** *int*: The number of facades (0 to 4). </li>
+<li> **swimming_pool** *str*: yes/no </li>
+<li> **state_of_the_building** *str*: as new/good/just renovated/to renovate/unknown </li>
+<li> **construction_year** *int*: The property built's year. </li>
+<li> **surface_of_the_land** *int*: The area (m2) of the land. (for house only) </li>
+ 
 Our target is:
 
-- **price** *float*: Price (€) of the property.
+- **price** *float*: Price (€) of the property. 
 
 </details>
 
