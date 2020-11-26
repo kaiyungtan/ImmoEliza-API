@@ -61,13 +61,13 @@ You need to create an API that will make price forecasts on houses according to 
 
 * According to [STATBEL](https://statbel.fgov.be/en/themes/housing/house-price-index#news):
 
-	- The observed annual inflation rate for house prices amounts to 4.5 % in the second quarter of 2020 compared to 3.5 % in the previous quarter.
+	* The observed annual inflation rate for house prices amounts to 4.5 % in the second quarter of 2020 compared to 3.5 % in the previous quarter.
 
-	-The average inflation rate for the last four quarters amounts to 4.3 %.
+	* The average inflation rate for the last four quarters amounts to 4.3 %.
 
-	-The house price index went up by 1.4 % in the second quarter of 2020 compared to the previous quarter.
+	* The house price index went up by 1.4 % in the second quarter of 2020 compared to the previous quarter.
 
-	- The house price index can be broken down by new houses and existing houses. In the second quarter of 2020, annual inflation amounted to 5.3 % for new houses and 4.3 % for existing houses. 
+	* The house price index can be broken down by new houses and existing houses. In the second quarter of 2020, annual inflation amounted to 5.3 % for new houses and 4.3 % for existing houses. 
 
 note: The house price index measures the price evolution with the assumption that the characteristics of the property sold remain unchanged.
 
