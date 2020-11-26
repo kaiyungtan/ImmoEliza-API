@@ -122,7 +122,8 @@ note: The house price index measures the price evolution with the assumption tha
 		- longitude	
 		- lattitude
 
-* 2 folium map were created to show average price square per meter in each city for houses and apartement. [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)[average_apartment_price] (https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
+* 2 folium map were created to show average price square per meter in each city for houses and apartement. [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)
+[average_apartment_price](https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
 
 
 ## Modeling
