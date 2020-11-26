@@ -140,16 +140,16 @@ note: The house price index measures the price evolution with the assumption tha
 * Libraries used in this project as follow:
 	<details>
 	  <summary>Libraries</summary>
-		- from sklearn.model_selection import train_test_split
-		- from sklearn.preprocessing import StandardScaler,OneHotEncoder
-		- from sklearn.compose import ColumnTransformer
-		- from sklearn.pipeline import Pipeline
-		- from sklearn.linear_model import LinearRegression
-		- from sklearn.linear_model import Lasso,Ridge,ElasticNet
-		- from sklearn.tree import DecisionTreeRegressor
-		- from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor 
-		- from xgboost import XGBRegressor
-		- from sklearn.metrics import mean_squared_error, r2_score  
+		<li> from sklearn.model_selection import train_test_split</li> 
+		<li> from sklearn.preprocessing import StandardScaler,OneHotEncoder</li> 
+		<li> from sklearn.compose import ColumnTransformer</li> 
+		<li> from sklearn.pipeline import Pipeline</li> 
+		<li> from sklearn.linear_model import LinearRegression</li> 
+		<li> from sklearn.linear_model import Lasso,Ridge,ElasticNet</li> 
+		<li> from sklearn.tree import DecisionTreeRegressor</li> 
+		<li> from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor </li> 
+		<li> from xgboost import XGBRegressor</li> 
+		<li> from sklearn.metrics import mean_squared_error, r2_score </li>  
 	</details>
 
 * The following diagram shows the process of modeling. 
@@ -181,17 +181,17 @@ note: The house price index measures the price evolution with the assumption tha
 
 	<details>
 	  <summary>House for sale</summary>
-		- House for sale
-		- €230,000
-		- 4 bedrooms  226 m²square meters
-		- Bredestraat 70 3271 — Averbode
-		- Construction year 1930
-		- Building condition To renovate
-		- Facades 3
-		- Kitchen type Installed
-		- Surface of the plot 398 m²square meters
-		- Garden surface 150 m²square meters
-		- Terrace surface 25 m²square meters
+		<li> House for sale</li> 
+		<li> €230,000</li> 
+		<li> 4 bedrooms  226 m²square meters</li> 
+		<li> Bredestraat 70 3271 — Averbode</li> 
+		<li> Construction year 1930</li> 
+		<li> Building condition To renovate</li> 
+		<li> Facades 3</li> 
+		<li> Kitchen type Installed</li> 
+		<li> Surface of the plot 398 m²square meters</li> 
+		<li> Garden surface 150 m²square meters</li> 
+		<li> Terrace surface 25 m²square meters</li> 
 	</details>
 
 * create X_new features for predictions
@@ -239,15 +239,15 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 	<details>
 	  <summary>Apartment for sale</summary>
-		- Apartment for sale 
-		- €320,000
-		- 3 bedrooms | 130 m² square meters
-		- 1070 — Anderlecht
-		- Construction year	2017
-		- Building condition	As new
-		- Facades	2
-		- Kitchen type	USA hyper equipped
-		- Terrace surface	14 m² square meters
+		<li>Apartment for sale</li> 
+		<li>€320,000</li> 
+		<li>3 bedrooms | 130 m² square meters</li> 
+		<li> 1070 — Anderlecht</li> 
+		<li>Construction year	2017</li> 
+		<li>Building condition	As new</li> 
+		<li>Facades	2</li> 
+		<li>Kitchen type	USA hyper equipped</li> 
+		<li>Terrace surface	14 m² square meters</li> 
 	 </details>
 
 * Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
