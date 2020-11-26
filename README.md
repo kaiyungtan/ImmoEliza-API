@@ -169,21 +169,21 @@ note: The house price index measures the price evolution with the assumption tha
 
 * to test a new / live unseen data, an example of new immoweb were chosen:
 
-https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
+* https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
 
-* House for sale
-* €230,000
-* 4 bedrooms  226 m²square meters
-* Bredestraat 70 3271 — Averbode
-* Construction year 1930
-* Building condition To renovate
-* Facades 3
-* Kitchen type Installed
-* Surface of the plot 398 m²square meters
-* Garden surface 150 m²square meters
-* Terrace surface 25 m²square meters
+	* House for sale
+	* €230,000
+	* 4 bedrooms  226 m²square meters
+	* Bredestraat 70 3271 — Averbode
+	* Construction year 1930
+	* Building condition To renovate
+	* Facades 3
+	* Kitchen type Installed
+	* Surface of the plot 398 m²square meters
+	* Garden surface 150 m²square meters
+	* Terrace surface 25 m²square meters
 
-
+* create X_new features for predictions
 	* X_new = {
 	'postal_code':'3271',
 	'number_of_rooms': 4,
