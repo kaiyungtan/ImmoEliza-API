@@ -202,8 +202,6 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 ![image](https://user-images.githubusercontent.com/69633814/100379623-762c6700-3015-11eb-937f-c9eb76935394.png)
 
-
-
 ## Deployment on Heruko
 
 * Create a virtual environment called myenv 
@@ -226,9 +224,12 @@ and -0.45 % difference compare to the posted asking price for the house.
 * Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
 
 * Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
+
+* https://www.immoweb.be/en/classified/apartment/for-sale/anderlecht/1070/9042073?searchId=5fb749cc3354c
+	* Apartment for sale €320,000
 <img width="1143" alt="Screenshot 2020-11-26 at 19 02 01" src="https://user-images.githubusercontent.com/69633814/100381998-9a3e7700-301a-11eb-8f40-7161681a2cf5.png">
 
-* Result
+* Result the predicted price for the apartment is € 324,034 and 1.3 % difference compare to the posted asking price for the apartment.
 <img width="1166" alt="Screenshot 2020-11-26 at 19 00 59" src="https://user-images.githubusercontent.com/69633814/100381829-2308e300-301a-11eb-86d4-1296780b902c.png">
 
 ## Challenges
