@@ -256,6 +256,24 @@ and -0.45 % difference compare to the posted asking price for the house.
 * Result the predicted price for the apartment is € 324,034 and 1.3 % difference compare to the posted asking price for the apartment.
 <img width="1166" alt="Screenshot 2020-11-26 at 19 00 59" src="https://user-images.githubusercontent.com/69633814/100381829-2308e300-301a-11eb-86d4-1296780b902c.png">
 
+
+## API for web dev
+
+* two API routes were created for web dev to access the api namely:
+
+	* https://immoeliza-real-estate.herokuapp.com/predict_house_tojson2
+	* https://immoeliza-real-estate.herokuapp.com/predict_apartment_tojson2
+
+* it returns a json file with 4 key value pairs:
+
+	* "1. predicted price" : str(output)
+    * "2. predicted price_sqm" : str(pricem2)
+    * "3. {city_name} average price_sqm" : str(price_sqm)
+    * "4. difference(%)" : str(difference_pct)
+
+![api_web_dev](https://user-images.githubusercontent.com/69633814/100384809-556a0e80-3021-11eb-968c-9deaeae8466f.png)
+
+
 ## Challenges
 
 *  
