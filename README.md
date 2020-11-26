@@ -147,7 +147,7 @@ note: The house price index measures the price evolution with the assumption tha
 	* from xgboost import XGBRegressor
 	* from sklearn.metrics import mean_squared_error, r2_score  
 
-![image](https://user-images.githubusercontent.com/69633814/100377320-55621280-3011-11eb-88d7-aeb740799cf5.png)
+![image](https://user-images.githubusercontent.com/69633814/100377837-5778a100-3012-11eb-958d-5e5862ffb533.png)
 
 *  The objective of machine learning is not a model that does well on training data, but one that demonstrates it satisfies the business need and can be deployed on live data.
 
