@@ -26,7 +26,8 @@ def home():
 # route direct to predict house price by city name
 @app.route("/house",methods=['GET','POST'])
 def house():
-    return render_template("predict_house.html")
+    dropdown_list = ['yes', 'no']
+    return render_template("predict_house.html",dropdown_list=dropdown_list)
 
 # route direct to predict apartment price by city name
 @app.route("/apartment",methods=['GET','POST'])

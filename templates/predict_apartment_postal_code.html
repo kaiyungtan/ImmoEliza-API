@@ -6,18 +6,67 @@
 
        <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict_apartment_postal_code')}}"method="post">
-      	<input type="text" name="postal_code" placeholder="postal_code" required="required" />
-          <input type="int" name="number_of_rooms" placeholder="number_of_rooms" required="required" />
-  		    <input type="int" name="house_area" placeholder="apartment_area in m2" required="required" />
-          <input type="text" name="fully_equipped_kitchen" placeholder="equipped_kitchen(yes/no)" required="required" />
-          <input type="text" name="open_fire" placeholder="open_fire(yes/no)" required="required" />
-          <input type="text" name="terrace" placeholder="terrace(yes/no)" required="required" />
-          <input type="text" name="garden" placeholder="garden(yes/no)" required="required" />
-          <input type="int" name="number_of_facades" placeholder="number_of_facades" required="required" />
-          <input type="text" name="swimming_pool" placeholder="swimming_pool(yes/no)" required="required" />
-          <input type="text" name="state_of_the_building" placeholder="state_of_the_building" required="required" />
-          <input type="int" name="construction_year" placeholder="construction_year" required="required" />
-          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <label for="postal_code">postal_code:</label>
+        <input type="text" name="postal_code" placeholder="postal_code" required="required" />
+        <br> 
+        <label for="number_of_rooms">number_of_rooms:</label>
+        <input type="int" name="number_of_rooms" placeholder="number_of_rooms" required="required" />
+        <br> 
+        <label for="house_area">house_area:</label>
+        <input type="int" name="house_area" placeholder="house_area in m2" required="required" />
+        <br> 
+        <label for="fully_equipped_kitchen">fully_equipped_kitchen:</label>
+        <select name="fully_equipped_kitchen" id="fully_equipped_kitchen">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        <br> 
+        <label for="open_fire">open_fire:</label>
+        <select name="open_fire" id="open_fire">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        <br> 
+        <label for="terrace">terrace:</label>
+        <select name="terrace" id="terrace">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        <br> 
+        <label for="garden">garden:</label>
+        <select name="garden" id="garden">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        <br> 
+        <label for="number_of_facades">number_of_facades:</label>
+        <select name="number_of_facades" id="number_of_facades">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br> 
+        <label for="swimming_pool">swimming_pool:</label>
+        <select name="swimming_pool" id="swimming_pool">
+          <option value="1">yes</option>
+          <option value="2">no</option>
+        </select> 
+        <br> 
+        <label for="state_of_the_building">state_of_the_building:</label>
+        <select name="state_of_the_building" id="state_of_the_building">
+          <option value="1">as new</option>
+          <option value="2">good</option>
+          <option value="3">just renovated</option>
+          <option value="4">to renovate</option>
+          <option value="5">unknown</option>
+        </select>
+        <br> 
+        <label for="construction_year">construction_year:</label>
+        <input type="int" name="construction_year" placeholder="construction_year" required="required" />
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
       </form>
    </div>
   </body>

@@ -57,11 +57,11 @@ You need to create an API that will make price forecasts on houses according to 
 - **open_fire***str*: yes/no
 - **terrace** *str*: yes/no
 - **garden** *str*: yes/no
-- **surface_of_the_land** *int*: The area (m2) of the land.
-- **number_of_facadess** *int*: The number of facades (0 to 4).
+- **number_of_facades** *int*: The number of facades (0 to 4).
 - **swimming_pool** *str*: yes/no
 - **state_of_the_building** *str*: as new/good/just renovated/to renovate/unknown
 - **construction_year** *int*: The property built's year.
+- **surface_of_the_land** *int*: The area (m2) of the land.
  
 Our target is:
 
@@ -75,30 +75,42 @@ Our target is:
 
 ## Business Understanding 
 
+* Price prediction of the real estate involves a lot
+
+* 11 features
 
 ## Data Understanding
 
+*  
 
 ## Data Preparation
 
+*  
 
 ## Modeling
 
+*  
 
 ## Evaluation
+
+*  
 
 
 ## Deployment
 
+*  
 
 ## Challenges
 
+*  
 
 ## Limitation
 
+*  Limit 
 
 ## Further Development
 
+*  
 
 
 
