@@ -333,7 +333,7 @@ def predict_house_postal_code():
     return render_template('result.html', 
                             prediction_text1='Predicted house price is € {}  (€ {} /m2)'.format(output,pricem2),
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
-                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
+                            text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
 
 # route to predict apartment by postal code
@@ -385,7 +385,7 @@ def predict_apartment_postal_code():
     return render_template('result.html', 
                             prediction_text1='Predicted apartment price is € {}  (€ {} /m2)'.format(output,pricem2),
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
-                            text3='Different between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
+                            text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
      
 # route to render average_house_price
 
