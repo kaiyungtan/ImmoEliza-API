@@ -136,7 +136,8 @@ note: The house price index measures the price evolution with the assumption tha
 * A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data.
 
 * Libraries used in this project as follow:
-
+<details>
+  <summary>Libraries</summary>
 	* from sklearn.model_selection import train_test_split
 	* from sklearn.preprocessing import StandardScaler,OneHotEncoder
 	* from sklearn.compose import ColumnTransformer
@@ -147,6 +148,7 @@ note: The house price index measures the price evolution with the assumption tha
 	* from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor 
 	* from xgboost import XGBRegressor
 	* from sklearn.metrics import mean_squared_error, r2_score  
+</details>
 
 * The following diagram shows the process of modeling. 
 
@@ -175,6 +177,8 @@ note: The house price index measures the price evolution with the assumption tha
 
 * https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
 
+<details>
+  <summary>House for sale</summary>
 	* House for sale
 	* €230,000
 	* 4 bedrooms  226 m²square meters
@@ -186,6 +190,7 @@ note: The house price index measures the price evolution with the assumption tha
 	* Surface of the plot 398 m²square meters
 	* Garden surface 150 m²square meters
 	* Terrace surface 25 m²square meters
+</details>
 
 * create X_new features for predictions
 	* X_new = {
@@ -230,6 +235,8 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 * https://www.immoweb.be/en/classified/apartment/for-sale/anderlecht/1070/9042073?searchId=5fb749cc3354c
 
+<details>
+  <summary>Apartment for sale</summary>
 	* Apartment for sale 
 	* €320,000
 	* 3 bedrooms | 130 m² square meters
@@ -239,7 +246,8 @@ and -0.45 % difference compare to the posted asking price for the house.
 	* Facades	2
 	* Kitchen type	USA hyper equipped
 	* Terrace surface	14 m² square meters
- 
+ </details>
+
 * Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
 
 <img width="1143" alt="Screenshot 2020-11-26 at 19 02 01" src="https://user-images.githubusercontent.com/69633814/100381998-9a3e7700-301a-11eb-8f40-7161681a2cf5.png">
