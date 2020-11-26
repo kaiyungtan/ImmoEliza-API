@@ -272,7 +272,7 @@ and -0.45 % difference compare to the posted asking price for the house.
     * "4. difference(%)" : str(difference_pct)
 
 
-* tested api with [postman](www.postman.com)
+* tested api with [postman](https://www.postman.com)
 
 ![api_web_dev](https://user-images.githubusercontent.com/69633814/100384809-556a0e80-3021-11eb-968c-9deaeae8466f.png)
 
