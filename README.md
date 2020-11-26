@@ -171,35 +171,34 @@ note: The house price index measures the price evolution with the assumption tha
 
 https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
 
-House for sale
-€230,000
-4 bedrooms  226 m²square meters
-Bredestraat 70 3271 — Averbode
-Construction year 1930
-Building condition To renovate
-Facades 3
-Kitchen type Installed
-Kitchen surface 14 m²square meters
-Surface of the plot 398 m²square meters
-Garden surface 150 m²square meters
-Terrace surface 25 m²square meters
+* House for sale
+* €230,000
+* 4 bedrooms  226 m²square meters
+* Bredestraat 70 3271 — Averbode
+* Construction year 1930
+* Building condition To renovate
+* Facades 3
+* Kitchen type Installed
+* Surface of the plot 398 m²square meters
+* Garden surface 150 m²square meters
+* Terrace surface 25 m²square meters
 
 
-X_new = {
-'postal_code':'3271',
-'number_of_rooms': 4,
-'house_area' : 226,
-'fully_equipped_kitchen': 'yes',
-'open_fire':'no',
-'terrace':'yes',
-'garden':'yes',
-'number_of_facades': 3,
-'swimming_pool': 'no',
-'state_of_the_building': 'to renovate',
-'construction_year' : 1930,
-'surface_of_the_land' : 398}
+	* X_new = {
+	'postal_code':'3271',
+	'number_of_rooms': 4,
+	'house_area' : 226,
+	'fully_equipped_kitchen': 'yes',
+	'open_fire':'no',
+	'terrace':'yes',
+	'garden':'yes',
+	'number_of_facades': 3,
+	'swimming_pool': 'no',
+	'state_of_the_building': 'to renovate',
+	'construction_year' : 1930,
+	'surface_of_the_land' : 398}
 
-The result show predicted price for the house is € 228964.0
+* The result show predicted price for the house is € 228964.0
 and -0.45 % difference compare to the posted asking price for the house.
 
 ![image](https://user-images.githubusercontent.com/69633814/100379623-762c6700-3015-11eb-937f-c9eb76935394.png)
