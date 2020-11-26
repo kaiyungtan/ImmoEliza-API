@@ -1,4 +1,4 @@
-![image] (https://user-images.githubusercontent.com/69633814/100369671-80466980-3005-11eb-962c-9f8be678321f.png)
+![image](https://user-images.githubusercontent.com/69633814/100369671-80466980-3005-11eb-962c-9f8be678321f.png)
 
 # ImmoEliza-API
 
