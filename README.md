@@ -225,7 +225,10 @@ and -0.45 % difference compare to the posted asking price for the house.
 - [X] Add github link on Home Page.
 - [X] Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
 
+* Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
+<img width="1143" alt="Screenshot 2020-11-26 at 19 02 01" src="https://user-images.githubusercontent.com/69633814/100381998-9a3e7700-301a-11eb-8f40-7161681a2cf5.png">
 
+* Result
 <img width="1166" alt="Screenshot 2020-11-26 at 19 00 59" src="https://user-images.githubusercontent.com/69633814/100381829-2308e300-301a-11eb-86d4-1296780b902c.png">
 
 ## Challenges
