@@ -4,7 +4,9 @@
 
 To create an API that will make price forecasts on houses according to certain parameters (postal code, number of rooms, surface area, etc.)
 
-* Website - https://immoeliza-real-estate.herokuapp.com/
+* Website (AI Dev) - https://immoeliza-real-estate.herokuapp.com/
+
+* Website (Web Dev) - 
 
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
 
@@ -87,12 +89,12 @@ note: The house price index measures the price evolution with the assumption tha
 
 * After further data cleaning, the dataset was reduced to 24040 rows (observations) with 19 columns.(belgium_real_estate_2020_rev1_19.11.2020.csv)
 
-* Then the dataset were seperated to 2 dataset seperately namely df_house for houses and df_apartment for apartements.(Belgium_Real_Estate_2020_Immoweb - House & Apartment.ipynb)
+* Then the dataset were seperated to 2 dataset seperately namely df_house for houses and df_apartment for apartements.[Belgium_Real_Estate_2020](https://github.com/kaiyungtan/ImmoEliza-API/blob/main/notebook/Belgium_Real_Estate_2020_Immoweb%20-%20House%20%26%20Apartment.ipynb)
 
 	- df_house (10254 rows, 19 columns)(belgium_houses_20.11.2020.csv)
 	- df_apartment (13207 rows, 18 columns) (belgium_apartments_20.11.2020.csv')
 
-*  to compare predicted price square per meter with the average price square per meter of a city, a seperate dataset was prepared to have only 7 columns:(Data_analysis & Create Price_Sqm.ipynb)
+*  to compare predicted price square per meter with the average price square per meter of a city, a seperate dataset was prepared to have only 7 columns:[Price_Sqm](https://github.com/kaiyungtan/ImmoEliza-API/blob/main/notebook/Data_analysis%20%26%20Create%20Price_Sqm.ipynb)
 		- city_name	
 		- postal_code	
 		- price_sqm	
@@ -136,19 +138,19 @@ note: The house price index measures the price evolution with the assumption tha
 * A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data.
 
 * Libraries used in this project as follow:
-<details>
-  <summary>Libraries</summary>
-	* from sklearn.model_selection import train_test_split
-	* from sklearn.preprocessing import StandardScaler,OneHotEncoder
-	* from sklearn.compose import ColumnTransformer
-	* from sklearn.pipeline import Pipeline
-	* from sklearn.linear_model import LinearRegression
-	* from sklearn.linear_model import Lasso,Ridge,ElasticNet
-	* from sklearn.tree import DecisionTreeRegressor
-	* from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor 
-	* from xgboost import XGBRegressor
-	* from sklearn.metrics import mean_squared_error, r2_score  
-</details>
+	<details>
+	  <summary>Libraries</summary>
+		- from sklearn.model_selection import train_test_split
+		- from sklearn.preprocessing import StandardScaler,OneHotEncoder
+		- from sklearn.compose import ColumnTransformer
+		- from sklearn.pipeline import Pipeline
+		- from sklearn.linear_model import LinearRegression
+		- from sklearn.linear_model import Lasso,Ridge,ElasticNet
+		- from sklearn.tree import DecisionTreeRegressor
+		- from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor 
+		- from xgboost import XGBRegressor
+		- from sklearn.metrics import mean_squared_error, r2_score  
+	</details>
 
 * The following diagram shows the process of modeling. 
 
@@ -177,20 +179,20 @@ note: The house price index measures the price evolution with the assumption tha
 
 * https://www.immoweb.be/en/classified/house/for-sale/averbode/3271/9040949?searchId=5fb6439b8044e
 
-<details>
-  <summary>House for sale</summary>
-	* House for sale
-	* €230,000
-	* 4 bedrooms  226 m²square meters
-	* Bredestraat 70 3271 — Averbode
-	* Construction year 1930
-	* Building condition To renovate
-	* Facades 3
-	* Kitchen type Installed
-	* Surface of the plot 398 m²square meters
-	* Garden surface 150 m²square meters
-	* Terrace surface 25 m²square meters
-</details>
+	<details>
+	  <summary>House for sale</summary>
+		- House for sale
+		- €230,000
+		- 4 bedrooms  226 m²square meters
+		- Bredestraat 70 3271 — Averbode
+		- Construction year 1930
+		- Building condition To renovate
+		- Facades 3
+		- Kitchen type Installed
+		- Surface of the plot 398 m²square meters
+		- Garden surface 150 m²square meters
+		- Terrace surface 25 m²square meters
+	</details>
 
 * create X_new features for predictions
 	* X_new = {
@@ -235,18 +237,18 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 * https://www.immoweb.be/en/classified/apartment/for-sale/anderlecht/1070/9042073?searchId=5fb749cc3354c
 
-<details>
-  <summary>Apartment for sale</summary>
-	* Apartment for sale 
-	* €320,000
-	* 3 bedrooms | 130 m² square meters
-	* 1070 — Anderlecht
-	* Construction year	2017
-	* Building condition	As new
-	* Facades	2
-	* Kitchen type	USA hyper equipped
-	* Terrace surface	14 m² square meters
- </details>
+	<details>
+	  <summary>Apartment for sale</summary>
+		- Apartment for sale 
+		- €320,000
+		- 3 bedrooms | 130 m² square meters
+		- 1070 — Anderlecht
+		- Construction year	2017
+		- Building condition	As new
+		- Facades	2
+		- Kitchen type	USA hyper equipped
+		- Terrace surface	14 m² square meters
+	 </details>
 
 * Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
 
