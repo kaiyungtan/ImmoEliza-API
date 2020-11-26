@@ -4,31 +4,40 @@ To create an API that will make price forecasts on houses according to certain p
 
 Deployment through Heroku - https://immoeliza-real-estate.herokuapp.com/
 
-## Team Members
 
-Group 1 : Valentin, Henrique, Nathanaël, Adam
+## Background
 
-	- frontend: 2 
-	- backend: 1
-	- 1 AI Dev (Adam)
- 
+This project is a collaboration between BeCode AI and the BeCode Web 
+Dev team.
+
+The AI developers will create an API and the web developers will develop an interface for the client "ImmoEliza". 
+
+The main process is about a collaboration between the AI and the web dev so that all have to be in sync in order to know how to construct the form.
+
+Team Members consists of: 
+
+Web Dev : Valentin, Henrique, Nathanaël 
+
+AI Dev 	: Adam 
+
     
 ## Mission objectives  
 
 - [X] Be able to create a prediction model
-- [X] Be able to deploy your model
+- [X] Be able to deploy model
 - [X] Be able to work in a team
-- [X] Be able to build an api.
+- [X] Be able to build an api
 
 ## The Mission
 
-You need to create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc...). This API will be used by webdevs who will be able to use it to create an interface for the ImmoEliza agency.
+You need to create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc...). This API will be used by web devs who will be able to use it to create an interface for the ImmoEliza agency.
 
 
 ### Must-have features
 
 - [X] The api must be functional 
 - [X] Your model must be functional
+
 
 ### Additional features
 
@@ -82,8 +91,6 @@ Our target is:
 ## Deployment
 
 
-
-
 ## Challenges
 
 
@@ -94,17 +101,5 @@ Our target is:
 
 
 
-### Steps
-
-1. Create the repository - Adam   
-2. Create Trello to track progress - Valentin
-3. Study the request (What & Why ?)
-4. Identify technical challenges (How ?)
-5. Create and save your model - Adam
-6. Create your API 
-7. Integrate your model into your API 
-
- 
-- 
 
 
