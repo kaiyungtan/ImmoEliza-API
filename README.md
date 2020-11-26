@@ -2,7 +2,9 @@
 
 To create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc.)
 
-Deployment through Heroku - https://immoeliza-real-estate.herokuapp.com/
+Website - https://immoeliza-real-estate.herokuapp.com/
+
+Github page - https://kaiyungtan.github.io/ImmoEliza-API/
 
 
 ## Background
