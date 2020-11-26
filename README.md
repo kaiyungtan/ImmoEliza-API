@@ -3,12 +3,11 @@ src="https://user-images.githubusercontent.com/69633814/100371617-5a6e9400-3008-
 
 # ImmoEliza-API
 
-	To create an API that will make price forecasts on houses according to certain parameters (postal code, number of rooms, surface area, etc.)
+To create an API that will make price forecasts on houses according to certain parameters (postal code, number of rooms, surface area, etc.)
 
 * Website - https://immoeliza-real-estate.herokuapp.com/
 
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
-
 
 
 ## Background
