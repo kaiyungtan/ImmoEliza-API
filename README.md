@@ -1,3 +1,5 @@
+![image] (https://user-images.githubusercontent.com/69633814/100369671-80466980-3005-11eb-962c-9f8be678321f.png)
+
 # ImmoEliza-API
 
 To create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc.)
@@ -5,6 +7,7 @@ To create an API that will make price forecasts on houses according to certain p
 * Website - https://immoeliza-real-estate.herokuapp.com/
 
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
+
 
 
 ## Background
@@ -90,6 +93,21 @@ note: The house price index measures the price evolution with the assumption tha
 	- df_house (10254 rows, 19 columns)(belgium_houses_20.11.2020.csv)
 	- df_apartment (13207 rows, 18 columns) (belgium_apartments_20.11.2020.csv')
 
+*  to compare predicted price square per meter with the average price square per meter of a city, a seperate dataset was prepared to have only 7 columns:(Data_analysis & Create Price_Sqm.ipynb)
+		- city_name	
+		- postal_code	
+		- price_sqm	
+		- region	
+		- province	
+		- longitude	
+		- lattitude
+
+* 2 folium map were created to show average price square per meter in each city for houses and apartement. 
+	* [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)
+	* [average_apartment_price](https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
+
+* 
+
 ### Features of the dataset:
 <ol>
 <li> postal_code (str): Postal code of city.</li>
@@ -112,21 +130,6 @@ note: The house price index measures the price evolution with the assumption tha
 <ol>
 <li> price (float) : Price (€) of the property.</li> 
 </ol>
-
-*  to compare predicted price square per meter with the average price square per meter of a city, a seperate dataset was prepared to have only 7 columns:(Data_analysis & Create Price_Sqm.ipynb)
-		- city_name	
-		- postal_code	
-		- price_sqm	
-		- region	
-		- province	
-		- longitude	
-		- lattitude
-
-* 2 folium map were created to show average price square per meter in each city for houses and apartement. 
-	* [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)
-	* [average_apartment_price](https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
-
-
 ## Modeling
 
 *  
