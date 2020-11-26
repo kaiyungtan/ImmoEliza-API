@@ -52,9 +52,9 @@ You need to create an API that will make price forecasts on houses according to 
 * to show the difference (%) between house/apartment sq/m2 versus the average sq/m2 for the city
 
 
-## Process Overview
+## Machine Learning Process Overview
 
-![image](https://user-images.githubusercontent.com/69633814/100321235-a696e580-2fc2-11eb-9f09-36423760b5b4.png)
+![image](https://user-images.githubusercontent.com/69633814/100385145-1ab4a600-3022-11eb-9674-af2276a16f9e.png)
 
 ## Business Understanding 
 
