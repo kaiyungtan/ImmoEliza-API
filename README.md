@@ -25,10 +25,10 @@ AI Dev 	: Adam
     
 ## Mission objectives  
 
-- [X] Be able to create a prediction model
-- [X] Be able to deploy model
-- [X] Be able to work in a team
-- [X] Be able to build an api
+Be able to create a prediction model
+Be able to deploy model
+Be able to work in a team
+Be able to build an api
 
 ## The Mission
 
@@ -37,14 +37,14 @@ You need to create an API that will make price forecasts on houses according to 
 
 ### Must-have features
 
-- [X] The api must be functional 
-- [X] Your model must be functional
+The api must be functional 
+Your model must be functional
 
 
 ### Additional features
 
-- [X] to provide house/apartment average price (square per meter) for all cities in Belgium
-- [X] to show the difference (%) between house/apartment sq/m2 versus the average sq/m2 for the city
+to provide house/apartment average price (square per meter) for all cities in Belgium
+to show the difference (%) between house/apartment sq/m2 versus the average sq/m2 for the city
 
 
 ## Process Overview

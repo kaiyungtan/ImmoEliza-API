@@ -49,6 +49,9 @@ def apartment_postal_code():
 def result():
     return render_template("result.html")
 
+@app.route("/github")
+def github():
+    return redirect("https://kaiyungtan.github.io/ImmoEliza-API/", code=302)
 
 # API route (House) for web dev, return json file with the following output:
 # 1. predicted price  
