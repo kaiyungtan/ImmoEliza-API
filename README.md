@@ -1,5 +1,5 @@
 <img align="center" alt="ImmoEliza Logo" title="ImmoEliza Logo" width="100px" 
-src="https://user-images.githubusercontent.com/69633814/100369671-80466980-3005-11eb-962c-9f8be678321f.png" />
+src="https://user-images.githubusercontent.com/69633814/100371617-5a6e9400-3008-11eb-818f-c4fbee59744a.png" />
 
 # ImmoEliza-API
 
