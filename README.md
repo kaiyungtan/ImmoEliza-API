@@ -276,16 +276,19 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 ## Challenges
 
-*  
-
+* time spent on training models
+* deployment on heruko
 
 ## Limitation
 
-*  
+* only for sale of house or apartment
 
 ## Further Development
 
-*  
+* To scrap immoweb or other websites with more recent dataset
+* Explore other machine algorithms or even neural network
+* To propose related property on the website based on the inputs and predicted price
+* to predict rental prices of houses or apartments
 
 
 
