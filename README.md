@@ -204,26 +204,26 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 
 
-## Deployment
+## Deployment on Heruko
 
-- [X] Create a virtual environment called myenv 
-- [X] pip install all libraries flask / numpy etc
-- [X] pip freeze --local > requirements.txt to create list of libraries installed on myenv environment
-- [X] Create a flask app -- named app.py
-- [X] Add routes for api
-- [X] create layout template
-- [X] create Procfile -- web: gunicorn app:app
-- [X] pip install gunicorn and update requirements.txt
-- [X] To deploy heruko:
+* Create a virtual environment called myenv 
+* pip install all libraries flask / numpy etc
+* pip freeze --local > requirements.txt to create list of libraries installed on myenv environment
+* Create a flask app -- named app.py
+* Add routes for api
+* create layout template
+* create Procfile -- web: gunicorn app:app
+* pip install gunicorn and update requirements.txt
+* To deploy heruko:
 
 	* heroku create
 	* git push heroku HEAD:master
 	* heroku ps:scale web=1
 	* heroku open
 
-- [X] Deployment successful.  
-- [X] Add github link on Home Page.
-- [X] Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
+* Deployment successful.  
+* Add github link on Home Page.
+* Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
 
 * Prediction with Postal Code - Apartment https://immoeliza-real-estate.herokuapp.com/apartment_postal_code
 <img width="1143" alt="Screenshot 2020-11-26 at 19 02 01" src="https://user-images.githubusercontent.com/69633814/100381998-9a3e7700-301a-11eb-8f40-7161681a2cf5.png">
