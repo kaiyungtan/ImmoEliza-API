@@ -106,7 +106,6 @@ note: The house price index measures the price evolution with the assumption tha
 	* [average_house_price](https://immoeliza-real-estate.herokuapp.com/map_average_house_price)
 	* [average_apartment_price](https://immoeliza-real-estate.herokuapp.com/map_average_apartment_price)
 
-* 
 
 ### Features of the dataset:
 <ol>
@@ -130,14 +129,34 @@ note: The house price index measures the price evolution with the assumption tha
 <ol>
 <li> price (float) : Price (€) of the property.</li> 
 </ol>
+
 ## Modeling
 
-*  
+* The following diagram shows the process of modeling. 
+
+* The main libraries used as follow:
+
+	* from sklearn.model_selection import train_test_split
+	* from sklearn.preprocessing import StandardScaler,OneHotEncoder
+	* from sklearn.compose import ColumnTransformer
+	* from sklearn.pipeline import Pipeline
+	* from sklearn.linear_model import LinearRegression
+	* from sklearn.linear_model import Lasso,Ridge,ElasticNet
+	* from sklearn.tree import DecisionTreeRegressor
+	* from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor 
+	* from xgboost import XGBRegressor
+	* from sklearn.metrics import mean_squared_error, r2_score  
+
+![image](https://user-images.githubusercontent.com/69633814/100377320-55621280-3011-11eb-88d7-aeb740799cf5.png)
+
+*  The objective of machine learning is not a model that does well on training data, but one that demonstrates it satisfies the business need and can be deployed on live data.
+
+* A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data.
+
 
 ## Evaluation
 
 *  
-
 
 ## Deployment
 
