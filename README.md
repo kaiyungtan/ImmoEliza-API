@@ -23,9 +23,9 @@ The main process is about a collaboration between the AI and the web dev so that
 
 Team Members consists of: 
 
-* Web Dev : Valentin, Henrique, Nathanaël 
+* AI Dev  : Adam 
 
-* AI Dev 	: Adam 
+* Web Dev : Valentin, Henrique, Nathanaël 
 
     
 ## Mission objectives  
