@@ -207,7 +207,24 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 ## Deployment
 
-*  
+- [X] Create a virtual environment called myenv 
+- [X] pip install all libraries flask / numpy etc
+- [X] pip freeze --local > requirements.txt to create list of libraries installed on myenv environment
+- [X] Create a flask app -- named app.py
+- [X] Add routes for api
+- [X] create layout template
+- [X] create Procfile -- web: gunicorn app:app
+- [X] pip install gunicorn and update requirements.txt
+- [X] To deploy heruko:
+
+	* heroku create
+	* git push heroku HEAD:master
+	* heroku ps:scale web=1
+	* heroku open
+
+- [X] Deployment successful.  
+- [X] Add github link on Home Page.
+- [X] Renamed heroku link - https://immoeliza-real-estate.herokuapp.com
 
 ## Challenges
 
