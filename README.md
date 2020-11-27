@@ -281,17 +281,30 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 * time spent on training models
 * deployment on heruko
+* 
 
 ## Limitation
 
-* only for sale of house or apartment
+* only for prediction price of general houses or apartments, it doesn't include subtype of property like villa,town-house,mansion,other exceptional property, country house.
+
+* when unseen data is one of the subtype of property, the model predicted price will have higher error.
+
 
 ## Further Development
 
-* To scrap immoweb or other websites with more recent dataset
-* Explore other machine algorithms or even neural network
+* To obtain more recent dataset from immoweb or other property websites w  
+* To include other features:
+
+	*	Subtype of property
+	*	Amenities : cellar? attic? parking?
+	*	View of the property
+	* 	Solar orientation
+	* 	Energy performance
+	*	Solar panels
+
+* Explore other machine algorithms i.e CatBoost, LightGBM
 * To propose related property on the website based on the inputs and predicted price
-* to predict rental prices of houses or apartments
+* To predict rental prices of houses or apartments
 
 
 
