@@ -298,9 +298,9 @@ and -0.45 % difference compare to the posted asking price for the house.
 	*	Subtype of property
 	*	Amenities : cellar? attic? parking?
 	*	View of the property
-	* 	Solar orientation
-	* 	Energy performance
-	*	Solar panels
+	* 	Energy class
+	*	Number of floors (for apartment)
+	*	Elevator (for apartment)
 
 * Explore other machine algorithms i.e CatBoost, LightGBM
 * To propose related property on the website based on the inputs and predicted price
