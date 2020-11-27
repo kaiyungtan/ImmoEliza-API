@@ -8,9 +8,9 @@ To create an API that will make price forecasts on houses or apartments accordin
 
 * Github page - https://kaiyungtan.github.io/ImmoEliza-API/
 
-* Website (Web Dev) - 
+* Website (Web Dev) - Under construction
 
-* Github repo (Web Dev) -
+* Github repo (Web Dev) - https://github.com/VieiraHenrique/testPhp (Under construction)
 
 ## Background
 
