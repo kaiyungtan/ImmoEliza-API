@@ -173,7 +173,7 @@ note: The house price index measures the price evolution with the assumption tha
 
 ## Evaluation
 
-*  After evaluating 8 different models on the testset plus various random search CV conducted on the testset:   
+*  After evaluating 8 different models on the test set plus various random search cross validation conducted on the test set:   
 
 	* a ridge model (alpha=0.7) was selected for house price prediction with train accuracy: 0.77 and test accuracy: 0.73.
 
