@@ -325,6 +325,8 @@ and -0.45 % difference compare to the posted asking price for the house.
 	* Google Cloud platform 
 	* Azure Cloud
 
+* To include range of prediction i.e 10% lower or higher of the predicted price
 
+<img width="1155" alt="Screenshot 2020-11-27 at 14 17 39" src="https://user-images.githubusercontent.com/69633814/100453566-71ba8980-30bb-11eb-9823-8fd44b609d8a.png">
 
 

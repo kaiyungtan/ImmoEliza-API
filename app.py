@@ -229,8 +229,13 @@ def predict_house():
 
     difference = pricem2 - price_sqm
 
+    lower = output*0.9
+    upper = output*1.1
+
     return render_template('result.html', 
                             prediction_text1='Predicted house price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            prediction_text2='Lower Range :€ {}'.format(round(lower)),
+                            prediction_text3='Higher Range :€ {}'.format(round(upper)),
                             text2='Average Price in {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
@@ -281,8 +286,13 @@ def predict_apartment():
 
     difference = pricem2 - price_sqm
 
+    lower = output*0.9
+    upper = output*1.1
+
     return render_template('result.html', 
                             prediction_text1='Predicted apartment price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            prediction_text2='Lower Range :€ {}'.format(round(lower)),
+                            prediction_text3='Higher Range :€ {}'.format(round(upper)),
                             text2='Average Price in {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
@@ -333,8 +343,13 @@ def predict_house_postal_code():
 
     difference = pricem2 - price_sqm
 
+    lower = output*0.9
+    upper = output*1.1
+
     return render_template('result.html', 
                             prediction_text1='Predicted house price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            prediction_text2='Lower Range :€ {}'.format(round(lower)),
+                            prediction_text3='Higher Range :€ {}'.format(round(upper)),
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
 
@@ -385,8 +400,13 @@ def predict_apartment_postal_code():
 
     difference = pricem2 - price_sqm
 
+    lower = output*0.9
+    upper = output*1.1
+
     return render_template('result.html', 
                             prediction_text1='Predicted apartment price is € {}  (€ {} /m2)'.format(output,pricem2),
+                            prediction_text2='Lower Range :€ {}'.format(round(lower)),
+                            prediction_text3='Higher Range :€ {}'.format(round(upper)),
                             text2='Average Price for {} : € {} /m2'.format(city_name,price_sqm),
                             text3='Difference between predicted price/m2 and average price/m2 is {} %'.format(round(difference/price_sqm* 100,1)))
      
