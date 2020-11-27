@@ -216,24 +216,27 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 ## Deployment on Heruko
 
-* Create a virtual environment called myenv 
-* pip install all libraries flask / numpy etc
-* pip freeze --local > requirements.txt to create list of libraries installed on myenv environment
-* Create a flask app -- named app.py
-* Add routes for api
-* create layout template
-* create Procfile -- web: gunicorn app:app
-* pip install gunicorn and update requirements.txt
-* To deploy heruko:
-
-	* heroku create
-	* git push heroku HEAD:master
-	* heroku ps:scale web=1
-	* heroku open
-
+* Create web app using Flask as framework
+	* Create a virtual environment called myenv 
+	* pip install all libraries flask / numpy etc
+	* pip freeze --local > requirements.txt to create list of libraries installed on myenv environment
+	* Create a flask app -- named app.py
+	* Add routes for api
+	* create layout template
+	* create Procfile -- web: gunicorn app:app
+	* pip install gunicorn and update requirements.txt
+* Commit code on github
+* To deploy in heruko:
+	* create account in heroku
+	* link the github to heroku
+	* using terminal:
+		* heroku create
+		* git push heroku HEAD:master
+		* heroku ps:scale web=1
+		* heroku open
 * Deployment successful.  
 
-* to test a new / live unseen data, an example of new immoweb were chosen:
+* To test a new unseen data, an example from immoweb is chosen:
 
 * https://www.immoweb.be/en/classified/apartment/for-sale/anderlecht/1070/9042073?searchId=5fb749cc3354c
 
@@ -305,6 +308,10 @@ and -0.45 % difference compare to the posted asking price for the house.
 * Explore other machine algorithms i.e CatBoost, LightGBM
 * To propose related property on the website based on the inputs and predicted price
 * To predict rental prices of houses or apartments
+* Deployment model in virtual service in the cloud: 
+	* Amazon Web Services (AWS) EC2 Instance   
+	* Google Cloud platform 
+	* Azure Cloud
 
 
 
