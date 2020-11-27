@@ -15,7 +15,7 @@ model_apartment = joblib.load('./model/xgb_rs_model_apartment_20.11.2020.pkl')
 # models for predicting house or apartment price with postal code
 
 model_house_postal_code = joblib.load('./model/ridge_model_house_25.11.2020.pkl')
-model_apartment_postal_code = joblib.load('./model/gbr_rs_model_apartment_21.11.2020.pkl')
+model_apartment_postal_code = joblib.load('./model/xgb_rs_model_apartment_21.11.2020-rev1.pkl')
 
 # route to home
 @app.route("/")

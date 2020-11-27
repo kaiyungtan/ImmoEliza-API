@@ -2,7 +2,7 @@
 
 # ImmoEliza-API
 
-To create an API that will make price forecasts on houses according to certain parameters (postal code, number of rooms, surface area, etc.)
+To create an API that will make price forecasts on houses or apartments according to certain parameters (postal code, number of rooms, surface area, etc.)
 
 * Website (AI Dev) - https://immoeliza-real-estate.herokuapp.com/
 
@@ -37,7 +37,14 @@ Team Members consists of:
 
 ## The Mission
 
-You need to create an API that will make price forecasts on houses according to certain parameters (Zip code, number of rooms, surface area, etc...). This API will be used by web devs who will be able to use it to create an interface for the ImmoEliza agency.
+You need to create an API that will make price forecasts on houses or apartments according to certain parameters (postal code, number of rooms, surface area, etc...). This API will be used by web devs who will be able to use it to create an interface for the ImmoEliza agency.
+
+
+## Use Case examples:
+ 
+* to find out what is the predicted price of a house or apartment based on your selection criteria.
+* to compare the asking price of what is posted on the real estate website i.e ImmoWeb with what is predicted price.
+* to compare the price per square meter of the property with the average price per square meter of the city
 
 
 ### Must-have features
@@ -166,15 +173,21 @@ note: The house price index measures the price evolution with the assumption tha
 
 ## Evaluation
 
-*  After evaluating 8 models run on the test set, a ridge model (Linear least squares with l2 regularization) was selected for house price prediction. 
+*  After evaluating 8 different models on the testset plus various random search CV conducted on the testset:   
 
-* Train accuracy: 0.77 Test accuracy: 0.73
+	* a ridge model (alpha=0.7) was selected for house price prediction with train accuracy: 0.77 and test accuracy: 0.73.
+
+	* a XGboost model (n_estimators=700, max_depth= 4, learning_rate= 0.3) was selected for apartment price prediction with train accuracy: 0.88 and test accuracy: 0.77
 
 * plot predicted vs actual overlay the regression line as show for ridge model.
 
-![image](https://user-images.githubusercontent.com/69633814/100383137-36697d80-301d-11eb-8f7e-685246ba39b0.png)
+![ridge](https://user-images.githubusercontent.com/69633814/100383137-36697d80-301d-11eb-8f7e-685246ba39b0.png)
 
-* model was saved using joblib library.
+* plot predicted vs actual overlay the regression line as show for Xgboost model.
+
+![xgb_rs](https://user-images.githubusercontent.com/69633814/100444604-f8676a80-30ab-11eb-967c-ba73005aabd1.png)
+
+* models was saved using joblib library.
 
 * to test a new / live unseen data, an example of new immoweb were chosen:
 
@@ -284,7 +297,7 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 * time spent on training models
 * deployment on heruko
-* 
+
 
 ## Limitation
 
@@ -295,7 +308,7 @@ and -0.45 % difference compare to the posted asking price for the house.
 
 ## Further Development
 
-* To obtain more recent dataset from immoweb or other property websites w  
+* To obtain more recent dataset from immoweb or other property websites  
 * To include other features:
 
 	*	Amenities : cellar? attic? parking?
